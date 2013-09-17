@@ -14,6 +14,7 @@ gem 'newrelic_rpm'
 gem 'sinatra', '1.4.3'
 
 # core systems
+gem 'haml'
 gem 'mongoid'
 
 group :development, :test do
