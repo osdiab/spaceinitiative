@@ -15,6 +15,8 @@ gem 'sinatra', '1.4.3'
 
 # core systems
 gem 'haml'
+gem 'markdown'
+gem 'sass'
 gem 'mongoid'
 
 group :development, :test do
