@@ -9,6 +9,7 @@ GEM
     diff-lcs (1.2.4)
     dotenv (0.8.0)
     durran-validatable (2.0.1)
+    execjs (2.0.1)
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
@@ -31,6 +32,8 @@ GEM
       slop (~> 3.4, >= 3.4.5)
     pelusa (0.2.2)
     powerpack (0.0.6)
+    pre-commit (0.9.1)
+      execjs
     puma (2.5.1)
       rack (>= 1.1, < 2.0)
     puma (2.5.1-java)
@@ -71,6 +74,7 @@ DEPENDENCIES
   mongoid
   newrelic_rpm
   pelusa
+  pre-commit
   puma
   rspec
   rubocop
