@@ -3,22 +3,21 @@
 source 'https://rubygems.org'
 ruby '1.9.3', engine: 'rbx', engine_version: '2.0.0.m8'
 
-# deployment
+# core
+gem 'sinatra', '1.4.3'
 gem 'puma'
+gem 'rake'
+gem 'mongoid'
 gem 'foreman'
 
 # heroku
 gem 'newrelic_rpm'
 
-# sinatra
-gem 'sinatra', '1.4.3'
-
-# core systems
+# templating
 gem 'haml'
 gem 'markdown'
 gem 'sass'
 gem 'compass'
-gem 'mongoid'
 
 group :development, :test do
   gem 'pre-commit'
