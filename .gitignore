@@ -16,3 +16,6 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# SASS compiled stuff
+.sass-cache/

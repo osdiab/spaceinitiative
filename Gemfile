@@ -17,6 +17,7 @@ gem 'sinatra', '1.4.3'
 gem 'haml'
 gem 'markdown'
 gem 'sass'
+gem 'compass'
 gem 'mongoid'
 
 group :development, :test do
