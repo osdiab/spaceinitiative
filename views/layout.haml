@@ -2,16 +2,17 @@
 %html
   %head
     %title Stanford Spaceflight Initiative
+    %link{rel: 'stylesheet', type: 'text/css', href: 'css/app.css'}
   %body
     #content= yield
     #footer
-      %ul#ftrnav
-        %li.ftrlink
-          %a{href: '/about'} About SSI
-        %li.ftrlink
-          %a{href: '/contact'} Contact
-        %li.ftrlink
+      %ul#ftrnav.navlist
+        %li
+          %a.ftrlink{href: '/about'} About SSI
+        %li
+          %a.ftrlink{href: '/contact'} Contact
+        %li
           :markdown
             &copy; Stanford Spaceflight Initiative, 2013
-        %li.ftrlink
-          %a{href: '/about_site'} About this site
+        %li
+          %a.ftrlink{href: '/about_site'} About this site
