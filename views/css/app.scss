@@ -1,0 +1,21 @@
+@import "compass/typography/lists";
+
+body {
+
+}
+
+#content {
+
+}
+
+#footer {
+
+}
+
+.ftrlink {
+
+}
+
+.navlist {
+  @include horizontal-list
+}
