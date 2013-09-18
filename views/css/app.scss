@@ -1,21 +1,93 @@
 @import "compass/typography/lists";
 
-body {
+// defaults
 
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Helvetica, Arial;
+  font-size: 1.25em;
+  line-height: 1.5em;
 }
 
 #content {
 
 }
 
-#footer {
+// header
 
+#titlebar {
+  background: black; // todo: make real
+  color: white;
+
+  padding-top: 1.5em;
+  padding-left: 1.5em;
+}
+
+#title {
+  padding-right: 3em;
+
+  h1 {
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+#hdr {
+  background: black; // todo: make real
+  color: white;
+  padding: 3em;
+  text-align: center;
+
+  hr {
+    width: 50%;
+    margin: 1.5em auto 0 auto;
+    border-color: #aaa;
+  }
+}
+
+.hdrlink {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#aboutHdrLink {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ccc;
+}
+
+// footer
+
+#footer {
+  background: black; // todo: make real
+  color: white;
+  font-size: .8em;
 }
 
 .ftrlink {
-
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
+// nav
+
 .navlist {
-  @include horizontal-list
+  @include horizontal-list;
+  padding: 1.5em 3em;
+  text-align: center;
+
+  li {
+    padding: 0 1.5em;
+    @include float(center);
+  }
+}
+
+.navlink:hover {
+  color: #aff; // todo: choose better color
 }
