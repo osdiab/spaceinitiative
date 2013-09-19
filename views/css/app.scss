@@ -43,18 +43,18 @@ h1, h2, h3, h4 {
   background-size: cover;
   background-position: bottom;
   color: white;
+  text-align: center;
 }
 
 #hdrBgShadow {
   background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 3em;
 }
 
-#hdrContent {
-  text-align: center;
+#hdrIntro {
   max-width: 800px;
   margin: 0 auto;
-
-  padding: 3em;
+  padding-bottom: 6em;
 
   h2 {
     font-size: 2em;
@@ -62,12 +62,10 @@ h1, h2, h3, h4 {
     padding-top: 0;
     margin-top: 0;
   }
+}
 
-  hr {
-    width: 50%;
-    margin: 1.5em auto 0 auto;
-    border-color: #aaa;
-  }
+#hdrNavContainer {
+  background-color: rgba(0,0,0,0.4);
 }
 
 .hdrLink {
@@ -96,13 +94,14 @@ h1, h2, h3, h4 {
 // nav
 
 .navList {
-  @include horizontal-list;
+  margin: 0;
   padding: 0 3em;
+  list-style-type: none;
   text-align: center;
 
   li {
+    display: inline;
     padding: 0 1.5em;
-    @include float(center);
   }
 }
 
@@ -118,4 +117,9 @@ h1, h2, h3, h4 {
 
 a:hover {
   color: $linkHoverColor;
+}
+
+// content
+#contentPane {
+  padding: 1.5em;
 }
