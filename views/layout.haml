@@ -6,14 +6,14 @@
   %body
     #titlebar
       #title
-        %h1#titleText Stanford Student Space Initiative
+        %img#titleText{src: '/img/SSI-textlogo.svg', alt: 'Stanford Student Space Initiative'}
     #content= yield
     #footer
-      %ul#ftrnav.navlist
+      %ul#ftrNav.navList
         %li
-          %a.ftrlink.navlink{href: '/about'} About SSI
+          %a.ftrlink.navLink{href: '/about'} About SSI
         %li
-          %a.ftrlink.navlink{href: '/contact'} Contact
+          %a.ftrlink.navLink{href: '/contact'} Contact
         %li
-          %a.ftrlink.navlink{href: '/about_site'} About this site
+          %a.ftrlink.navLink{href: '/about_site'} About this site
         %li &copy; Stanford Spaceflight Initiative, 2013
