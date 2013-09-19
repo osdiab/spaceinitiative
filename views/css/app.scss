@@ -1,5 +1,6 @@
 @import "compass/typography/lists";
 @import "compass/css3/opacity";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
 
 // vars
 $linkHoverColor: #2E96FF;
@@ -11,9 +12,13 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: Helvetica, Arial;
+  font-family: 'Open Sans', 'Helvetica', 'Arial';
   font-size: 1.25em;
   line-height: 1.5em;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
 }
 
 #content {
@@ -76,7 +81,6 @@ body {
 .hdrLink {
   text-decoration: none;
   color: white;
-  font-weight: bold;
   font-size: 1.5em;
 }
 
@@ -95,7 +99,6 @@ body {
 .ftrlink {
   text-decoration: none;
   color: white;
-  font-weight: bold;
 }
 
 // nav
