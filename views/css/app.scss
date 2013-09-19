@@ -25,13 +25,22 @@ h1, h2, h3, h4 {
 
 #titlebar {
   background: $cardinalRed;
+  overflow: hidden;
   color: white;
-  padding: 1em 0 1em 1.5em;
+  padding: 1em 1.5em 1em 1.5em;
 }
 
 #title {
+  float: left;
   display: block;
-  height: 1.5em;
+  height: 1.75em;
+  margin-top: .375em;
+}
+
+#stanfordSeal {
+  display: block;
+  height: 2.5em;
+  float: right;
 }
 
 // header
@@ -81,7 +90,7 @@ h1, h2, h3, h4 {
 // footer
 
 #footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -124,6 +133,7 @@ a:hover {
 }
 
 // content
+
 #contentPane {
   padding: 1.5em;
 }
