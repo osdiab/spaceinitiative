@@ -1,0 +1,21 @@
+@import 'constants';
+
+#titlebar {
+  background: $cardinalRed;
+  overflow: hidden;
+  color: white;
+  padding: 1em 1.5em 1em 1.5em;
+}
+
+#title {
+  float: left;
+  display: block;
+  height: 1.75em;
+  margin-top: .375em;
+}
+
+#stanfordSeal {
+  display: block;
+  height: 2.5em;
+  float: right;
+}

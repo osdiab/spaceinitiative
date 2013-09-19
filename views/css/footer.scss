@@ -1,0 +1,18 @@
+@import 'constants';
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: $cardinalRed;
+  color: white;
+  font-size: .8em;
+}
+
+.ftrlink {
+  text-decoration: none;
+  color: white;
+}
+
+// NOTE: nav styles for footer are in nav.scss.

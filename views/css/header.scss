@@ -1,0 +1,39 @@
+#hdr {
+  $banner: '/img/banner/spacex-banner-1920.jpg';
+
+  background-image: url($banner);
+  background-size: cover;
+  background-position: bottom;
+  color: white;
+  text-align: center;
+}
+
+#hdrBgShadow {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 3em;
+}
+
+#hdrIntro {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 6em;
+
+  h2 {
+    font-size: 2em;
+    line-height: 1.25em;
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+.hdrLink {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+}
+
+#aboutHdrLink {
+  font-size: 1.25em;
+}
+
+@import 'index_nav.scss'

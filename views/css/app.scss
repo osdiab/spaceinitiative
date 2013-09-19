@@ -1,13 +1,8 @@
-@import "compass/typography/lists";
-@import "compass/css3/opacity";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
 
-// vars
-$linkHoverColor: #2E96FF;
-$cardinalRed: #8C1515;
+@import 'constants';
 
-// defaults
-
+// global theme
 body {
   margin: 0;
   padding: 0;
@@ -21,119 +16,18 @@ h1, h2, h3, h4 {
   font-weight: normal;
 }
 
-// titlebar
-
-#titlebar {
-  background: $cardinalRed;
-  overflow: hidden;
-  color: white;
-  padding: 1em 1.5em 1em 1.5em;
-}
-
-#title {
-  float: left;
-  display: block;
-  height: 1.75em;
-  margin-top: .375em;
-}
-
-#stanfordSeal {
-  display: block;
-  height: 2.5em;
-  float: right;
-}
-
-// header
-
-#hdr {
-  $banner: '/img/banner/spacex-banner-1920.jpg';
-
-  background-image: url($banner);
-  background-size: cover;
-  background-position: bottom;
-  color: white;
-  text-align: center;
-}
-
-#hdrBgShadow {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding-top: 3em;
-}
-
-#hdrIntro {
-  max-width: 800px;
-  margin: 0 auto;
-  padding-bottom: 6em;
-
-  h2 {
-    font-size: 2em;
-    line-height: 1.25em;
-    padding-top: 0;
-    margin-top: 0;
-  }
-}
-
-#hdrNavContainer {
-  background-color: rgba(0,0,0,0.4);
-}
-
-.hdrLink {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5em;
-}
-
-#aboutHdrLink {
-  font-size: 1.25em;
-}
-
-// footer
-
-#footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: $cardinalRed;
-  color: white;
-  font-size: .8em;
-}
-
-.ftrlink {
-  text-decoration: none;
-  color: white;
-}
-
-// nav
-
-.navList {
-  margin: 0;
-  padding: 0 3em;
-  list-style-type: none;
-  text-align: center;
-
-  li {
-    display: inline;
-    padding: 0 1.5em;
-  }
-}
-
-#hdrNav {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-}
-
-#ftrNav {
-  padding-top: .5em;
-  padding-bottom: .5em;
-}
-
 a:hover {
   color: $linkHoverColor;
 }
 
-// content
 
 #contentPane {
   padding: 1.5em;
 }
+
+// components
+
+@import 'titlebar';
+@import 'header';
+@import 'footer';
+@import 'nav';
