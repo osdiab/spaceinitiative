@@ -21,25 +21,17 @@ h1, h2, h3, h4 {
   font-weight: normal;
 }
 
-#content {
-
-}
-
 // titlebar
 
 #titlebar {
   background: $cardinalRed;
   color: white;
-  padding: .5em 0 .5em 1.5em;
+  padding: 1em 0 1em 1.5em;
 }
 
 #title {
-  padding: 0 3em 0 0;
-}
-
-#titleText {
   display: block;
-  height: 2em;
+  height: 1.5em;
 }
 
 // header
