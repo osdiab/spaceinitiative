@@ -1,5 +1,5 @@
-require './app'
+# encoding: UTF-8
 
-require 'newrelic_rpm'
+require './app'
 
 run Sinatra::Application
