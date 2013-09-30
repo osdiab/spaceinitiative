@@ -1,7 +1,5 @@
 require './app'
 
-configure :production do
-  require 'newrelic_rpm'
-end
+require 'newrelic_rpm'
 
 run Sinatra::Application
