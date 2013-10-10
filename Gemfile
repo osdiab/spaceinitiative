@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 source 'https://rubygems.org'
-ruby '1.9.3', engine: 'rbx', engine_version: '2.0.0.m8'
+ruby '2.0.0', engine: 'rbx', engine_version: '2.0.0.m9'
 
 # core
 gem 'sinatra', '1.4.3'
@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rake'
 gem 'mongoid'
 gem 'foreman'
+gem 'therubyracer'
 
 # heroku
 gem 'newrelic_rpm'
