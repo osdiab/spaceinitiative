@@ -6,5 +6,18 @@
 }
 
 #hdrNavContainer {
-  background-color: rgba(0,0,0,0.4);
+  $banner: '/img/banner/spacex-banner-1920.jpg';
+  background-image: url($banner);
+  background-position: bottom;
+}
+
+#hdrNavShadow {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#hdrNavContainerIndex {
+}
+
+#hdrNavShadowIndex {
+  background-color: rgba(0, 0, 0, 0.4);
 }
