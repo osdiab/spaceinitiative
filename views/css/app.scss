@@ -16,12 +16,17 @@ h1, h2, h3, h4 {
   font-weight: normal;
 }
 
+#pageHeading {
+  padding-top: 0;
+  margin-top: 0;
+}
+
 a:hover {
   color: $linkHoverColor;
 }
 
 
-#contentPane {
+.contentPane {
   padding: 1.5em;
 }
 
