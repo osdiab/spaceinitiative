@@ -1,21 +1,25 @@
 %head
   %title Stanford Student Space Initiative
-  %meta{charset: "utf-8"}/
+  %meta{charset: 'utf-8'}/
 
-  / JS
-  %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+  / Bootstrap
+  %script{src: '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css'}
+  <!--[if lt IE 9]>
+  <script src="/lib/js/html5shiv.js"></script>
+  <script src="/lib/js/respond.min.js"></script>
+  <![endif]-->
 
   / CSS
   %link{rel: 'stylesheet', type: 'text/css', href: 'css/app.css'}
 
   / Sticky footer IE fix
   <!--[if !IE 7]>
-  <style type="text/css">
+  <style type='text/css'>
   #wrap { display:table; height:100%; }
   </style>
   <![endif]-->
 
   / Moot
-  %link{href: "https://cdn.moot.it/1/moot.css", rel: "stylesheet"}/
-  %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
-  %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+  %link{href: 'https://cdn.moot.it/1/moot.css', rel: 'stylesheet'}/
+  %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}/
+  %meta{content: 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible'}/
