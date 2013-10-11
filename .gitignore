@@ -19,3 +19,6 @@ doc/
 
 # SASS compiled stuff
 .sass-cache/
+
+# log files
+log/
