@@ -2,6 +2,8 @@
 %html
   = haml :'partials/head'
   %body
-    = haml :'partials/titlebar'
-    #content= yield
+    #site
+      = haml :'partials/titlebar'
+      #content= yield
     = haml :'partials/footer'
+    = haml :'partials/appJS'

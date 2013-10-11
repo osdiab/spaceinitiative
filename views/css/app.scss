@@ -2,15 +2,47 @@
 
 @import 'constants';
 
-// global theme
-body {
+* {
+  margin: 0;
+  padding: 0
+}
+
+// layout
+html, body {
   margin: 0;
   padding: 0;
   border: 0;
+  height: 100%;
+}
+
+body {
   font-family: 'Open Sans', 'Helvetica', 'Arial';
   font-size: 1.25em;
   line-height: 1.5em;
 }
+
+#site {
+  min-height: 100%;
+}
+
+#content {
+  overflow: auto;
+}
+
+.contentPane {
+  padding: 1.5em;
+}
+
+// sticky footer Opera fixes (lol CSS)
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;/* negate effect of float*/
+}
+
+// styling
 
 h1, h2, h3, h4 {
   font-weight: normal;
@@ -23,11 +55,6 @@ h1, h2, h3, h4 {
 
 a:hover {
   color: $linkHoverColor;
-}
-
-
-.contentPane {
-  padding: 1.5em;
 }
 
 // components

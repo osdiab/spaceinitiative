@@ -2,7 +2,9 @@
 %html
   = haml :'partials/head'
   %body
-    = haml :'partials/titlebar'
-    = haml :'partials/headerNav', locals: { hdrClass: 'standard' }
-    #content= yield
+    #site
+      = haml :'partials/titlebar'
+      = haml :'partials/headerNav', locals: { hdrClass: 'standard' }
+      #content= yield
     = haml :'partials/footer'
+    = haml :'partials/appJS'
