@@ -5,33 +5,33 @@ require 'sinatra'
 require 'newrelic_rpm'
 
 get '/' do
-  haml :index
+  haml :'pages/index', { layout: :'layouts/index_layout' }
 end
 
 get '/learn' do
-  haml :learn
+  haml :'pages/learn'
 end
 
 get '/discuss' do
-  haml :discuss
+  haml :'pages/discuss'
 end
 
 get '/events' do
-  haml :events
+  haml :'pages/events'
 end
 
 get '/act' do
-  haml :act
+  haml :'pages/act'
 end
 
 get '/about' do
-  haml :about
+  haml :'pages/about'
 end
 
 get '/contact' do
-  haml :contact
+  haml :'pages/contact'
 end
 
 get '/about_site' do
-  haml :'about_site'
+  haml :'pages/about_site'
 end
