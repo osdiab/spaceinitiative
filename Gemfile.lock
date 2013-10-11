@@ -26,6 +26,7 @@ GEM
       tilt
     kramdown (1.2.0)
     libv8 (3.16.14.3)
+    libxml-ruby (2.7.0)
     logutils (0.6.0)
     markdown (1.1.1)
       kramdown (>= 1.0.2)
@@ -94,6 +95,7 @@ DEPENDENCIES
   compass
   foreman
   haml
+  libxml-ruby
   markdown
   mongoid
   newrelic_rpm

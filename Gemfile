@@ -20,6 +20,9 @@ gem 'markdown'
 gem 'sass'
 gem 'compass'
 
+# parsing
+gem 'libxml-ruby'
+
 group :development, :test do
   gem 'pre-commit'
   gem 'rspec' # unit testing
