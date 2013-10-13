@@ -1,6 +1,9 @@
 / JQuery
 %script{src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'}
 
+- if defined?(page) && page == 'discuss'
+  %script{src: "https://cdn.moot.it/1/moot.min.js"}
+
 / Bootstrap
 %script{src: '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'}
 

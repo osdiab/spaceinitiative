@@ -13,7 +13,7 @@ get '/learn' do
 end
 
 get '/discuss' do
-  haml :'pages/discuss'
+  haml :'pages/discuss', locals: { page: 'discuss' }
 end
 
 get '/events' do

@@ -7,4 +7,4 @@
       = haml :'partials/headerNav', locals: { hdrClass: 'standard' }
       #content= yield
     = haml :'partials/footer'
-    = haml :'partials/appJS'
+    = haml :'partials/appJS', locals: { page: page }
