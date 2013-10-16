@@ -2,6 +2,7 @@
 
 require 'compass'
 require 'sinatra'
+require 'yajl'
 require 'newrelic_rpm'
 
 get '/' do
@@ -34,4 +35,8 @@ end
 
 get '/about_site' do
   haml :'pages/about_site'
+end
+
+get '/api/tumblr/posts' do
+  yajl :'api/tumblr/posts'
 end

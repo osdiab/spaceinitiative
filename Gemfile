@@ -19,9 +19,13 @@ gem 'haml'
 gem 'markdown'
 gem 'sass'
 gem 'compass'
+gem 'yajl-ruby'
 
 # parsing
 gem 'libxml-ruby'
+
+# apis
+gem 'tumblr_client'
 
 group :development, :test do
   gem 'pre-commit'
