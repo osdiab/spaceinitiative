@@ -3,7 +3,15 @@
 require 'compass'
 require 'sinatra'
 require 'yajl'
+require 'tumblr_client'
 require 'newrelic_rpm'
+
+Tumblr.configure do |config|
+  config.consumer_key = ENV['SPACE_INIT_TUMBLR_OAUTH_CONSUMER']
+  config.consumer_secret = ENV['SPACE_INIT_TUMBLR_OAUTH_SECRET']
+  config.oauth_token = ENV['SPACE_INIT_TUMBLR_OAUTH_TOKEN']
+  config.oauth_token_secret = ENV['SPACE_INIT_TUMBLR_OAUTH_TOKEN_SECRET']
+end
 
 get '/' do
   haml :'pages/index', { layout: :'layouts/index_layout' }
