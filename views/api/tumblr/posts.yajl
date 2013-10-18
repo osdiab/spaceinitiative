@@ -1,0 +1,2 @@
+client = Tumblr::Client.new
+client.posts("omardiab.tumblr.com")
