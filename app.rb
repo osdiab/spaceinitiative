@@ -14,7 +14,7 @@ Tumblr.configure do |config|
 end
 
 get '/' do
-  haml :'pages/index', { layout: :'layouts/index_layout' }
+  haml :'pages/index', { page: 'index', layout: :'layouts/index_layout' }
 end
 
 get '/learn' do

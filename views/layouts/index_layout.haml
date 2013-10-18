@@ -6,4 +6,4 @@
       = haml :'partials/titlebar'
       #content= yield
     = haml :'partials/footer'
-    = haml :'partials/appJS'
+    = haml :'partials/appJS', locals: { page: 'index' }

@@ -1,13 +1,9 @@
-/ JQuery
+-# JQuery
 %script{src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'}
 
-- if defined?(page) && page == 'discuss'
-  %script{src: "https://cdn.moot.it/1/moot.min.js"}
 
-/ Bootstrap
+-# Bootstrap
 %script{src: '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'}
-
-
 
 :javascript
   $(document).ready(function() {
@@ -15,3 +11,11 @@
     $('#content').css('padding-bottom', footerHeight + 'px')
     $('#footer').css('margin-top', -footerHeight + 'px')
   })
+
+-# discuss [moot]
+- if page == 'discuss'
+  = haml :'partials/js/discuss'
+
+-# index [calendar]
+- if page == 'index'
+  = haml :'partials/js/index'
