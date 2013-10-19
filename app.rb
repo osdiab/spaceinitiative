@@ -5,6 +5,16 @@ require 'sinatra'
 require 'yajl'
 require 'tumblr_client'
 require 'newrelic_rpm'
+require 'padrino-helpers'
+require 'jammit-sinatra'
+
+register Padrino::Helpers
+register Jammit
+
+configure do
+  ::RAILS_ENV = "development" # this is needed to work around a Jammit limitation
+  Jammit.load_configuration("config/assets.yml")
+end
 
 Tumblr.configure do |config|
   config.consumer_key = ENV['SPACE_INIT_TUMBLR_OAUTH_CONSUMER']

@@ -1,0 +1,11 @@
+embed_assets: on
+
+javascripts:
+  vendor:
+    - public/js/vendor/jquery-1.10.2.min.js
+  common:
+    - public/js/app.js
+
+stylesheets:
+  common:
+    - public/css/compiled/app.css

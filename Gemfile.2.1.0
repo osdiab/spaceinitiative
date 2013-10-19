@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 source 'https://rubygems.org'
-ruby '2.1.0', engine: 'rbx', engine_version: '2.0.0'
+ruby '2.1.0', engine: 'rbx', engine_version: '2.1.1'
 
 # core
 gem 'sinatra', '1.4.3'
@@ -21,6 +21,8 @@ gem 'markdown'
 gem 'sass'
 gem 'compass'
 gem 'yajl-ruby'
+gem 'padrino-helpers', '>=0.11.4'
+gem 'jammit-sinatra'
 
 # parsing
 gem 'libxml-ruby'

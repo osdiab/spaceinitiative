@@ -1,21 +1,13 @@
--# JQuery
-%script{src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'}
+- #Jquery
+%script{src: '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'}
 
-
--# Bootstrap
-%script{src: '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'}
-
-:javascript
-  $(document).ready(function() {
-    var footerHeight = $('#footer').height()
-    $('#content').css('padding-bottom', footerHeight + 'px')
-    $('#footer').css('margin-top', -footerHeight + 'px')
-  })
-
--# discuss [moot]
+- #moot
 - if page == 'discuss'
-  = haml :'partials/js/discuss'
+  %script{src: '//cdn.moot.it/1/moot.min.js'}
 
--# index [calendar]
-- if page == 'index'
-  = haml :'partials/js/index'
+- #custom js
+= include_javascripts :common
+
+/[if lt IE 9]
+  <script src="/js/vendor/ie/html5shiv.js"></script>
+  <script src="/js/vendor/ie/respond.min.js"></script>

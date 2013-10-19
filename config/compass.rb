@@ -7,7 +7,7 @@ if defined?(Sinatra)
 else
   # this is the configuration to use when running within the compass
   # command line tool.
-  css_dir = File.join 'public', 'css'
+  css_dir = File.join 'public', 'css', 'compiled'
   relative_assets = true
   environment = :production
 end
