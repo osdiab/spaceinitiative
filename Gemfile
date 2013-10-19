@@ -10,7 +10,6 @@ gem 'rake'
 gem 'mongoid'
 gem 'foreman'
 gem 'therubyracer'
-gem 'rubysl'
 
 # heroku
 gem 'newrelic_rpm'
