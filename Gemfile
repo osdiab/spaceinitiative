@@ -12,13 +12,14 @@ gem 'foreman'
 gem 'therubyracer'
 
 # assets
-gem 'sinatra-assetpack', require: 'sinatra/assetpack'
+gem 'sinatra-assetpack'
+gem 'compass'
+gem 'sinatra-support', require: 'sinatra/support'
 
 # templating
 gem 'haml'
 gem 'markdown'
 gem 'sass'
-gem 'compass'
 gem 'yajl-ruby'
 
 # monitoring
