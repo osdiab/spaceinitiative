@@ -11,8 +11,8 @@ gem 'mongoid'
 gem 'foreman'
 gem 'therubyracer'
 
-# heroku
-gem 'newrelic_rpm'
+# assets
+gem 'sinatra-assetpack', require: 'sinatra/assetpack'
 
 # templating
 gem 'haml'
@@ -20,13 +20,11 @@ gem 'markdown'
 gem 'sass'
 gem 'compass'
 gem 'yajl-ruby'
-gem 'padrino-helpers', '>=0.11.4'
-gem 'jammit-sinatra'
 
-# parsing
-gem 'libxml-ruby'
+# monitoring
+gem 'newrelic_rpm'
 
-# http
+# apis
 gem 'tumblr_client'
 
 group :development, :test do
