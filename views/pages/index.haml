@@ -1,11 +1,6 @@
 = haml :'partials/header'
 .contentPane
   %h1#pageHeading News
-  %h1 Events
-  :javascript
-    function displayEvents(data)
-    {
-      googleEvents = data.feed.entry
-    }
-  %script{src: 'http://www.google.com/calendar/feeds/5or10qu0uhtfqcdqb3knrpn3r8%40group.calendar.google.com/public/full?alt=json-in-script&callback=displayEvents&orderby=starttime&max-results=5&singleevents=true&sortorder=ascending&futureevents=true'}
-  #events
+  #eventsPane
+    %h1 Events
+    #events

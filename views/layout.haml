@@ -1,10 +1,11 @@
 !!!
 %html
   = haml :'partials/head'
-  %body
+  %body{data: {page: [page.capitalize, request.request_method.capitalize].join} }
     #site
       = haml :'partials/titlebar'
-      = haml :'partials/headerNav', locals: { hdrClass: 'standard' }
+      - if page != 'index'
+        = haml :'partials/headerNav', locals: { hdrClass: 'standard' }
       #content= yield
     = haml :'partials/footer'
     = haml :'partials/appJS', locals: { page: page }

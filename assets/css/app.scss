@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
 
-@import 'constants';
+@import 'lib/constants';
 
 * {
   margin: 0;
@@ -55,8 +55,8 @@ a:hover {
 
 // components
 
-@import 'textstyle';
-@import 'titlebar';
-@import 'header';
-@import 'footer';
-@import 'nav';
+@import 'lib/textstyle';
+@import 'lib/titlebar';
+@import 'lib/header';
+@import 'lib/footer';
+@import 'lib/nav';

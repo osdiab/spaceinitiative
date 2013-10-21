@@ -1,12 +1,9 @@
-- #Jquery
-%script{src: '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'}
-
-- #moot
+- # moot
 - if page == 'discuss'
   %script{src: '//cdn.moot.it/1/moot.min.js'}
 
-- #custom js
-= include_javascripts :common
+- # application js
+= js :app
 
 /[if lt IE 9]
   <script src="/js/vendor/ie/html5shiv.js"></script>
