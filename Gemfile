@@ -13,6 +13,7 @@ gem 'therubyracer'
 
 # assets
 gem 'sinatra-assetpack'
+gem 'uglifier'
 
 # templating
 gem 'haml'
