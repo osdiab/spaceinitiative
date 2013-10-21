@@ -1,8 +1,9 @@
 $(document).ready(function() {
   initPage()
 
-  var page = $("body").data("page");
-  if("object" === typeof page) {
+  // load page-specific behavior
+  page = $('body').data('page');
+  if(typeof window[page] === 'object') {
     window[page].init();
   }
 })
