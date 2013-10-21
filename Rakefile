@@ -1,12 +1,7 @@
 # encoding: UTF-8
 require 'rake'
 
-desc 'Precompile the app\'s static content'
-task 'assets:precompile' do
-  system('compass compile')
-end
+APP_FILE  = 'app.rb'
+APP_CLASS = 'App'
 
-desc 'Clean the app\'s precompiled static content'
-task 'assets:clean' do
-  system('compass clean')
-end
+require 'sinatra/assetpack/rake'

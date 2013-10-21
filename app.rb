@@ -1,60 +1,90 @@
 # encoding: UTF-8
 
-require 'compass'
-require 'sinatra'
+require 'sinatra/base'
+require 'sinatra/assetpack'
+require 'haml'
 require 'yajl'
+require 'sass'
 require 'tumblr_client'
 require 'newrelic_rpm'
-require 'padrino-helpers'
-require 'jammit-sinatra'
 
-register Padrino::Helpers
-register Jammit
+class App < Sinatra::Base
+  #################
+  # Configuration #
+  #################
+  set :root, File.dirname(__FILE__)
+  register Sinatra::AssetPack
 
-configure do
-  ::RAILS_ENV = "development" # this is needed to work around a Jammit limitation
-  Jammit.load_configuration("config/assets.yml")
-end
+  set :scss, { load_paths: [ "#{App.root}/assets/css" ] }
+  assets do
+    serve '/js', from: 'assets/js'
+    serve '/css', from: 'assets/css'
+    serve '/images', from: 'assets/images'
 
-Tumblr.configure do |config|
-  config.consumer_key = ENV['SPACE_INIT_TUMBLR_OAUTH_CONSUMER']
-  config.consumer_secret = ENV['SPACE_INIT_TUMBLR_OAUTH_SECRET']
-  config.oauth_token = ENV['SPACE_INIT_TUMBLR_OAUTH_TOKEN']
-  config.oauth_token_secret = ENV['SPACE_INIT_TUMBLR_OAUTH_TOKEN_SECRET']
-end
+    js :app, '/js/app.js', [
+      '/js/vendor/*.js',
+      '/js/lib/**/*.js'
+    ]
 
-get '/' do
-  haml :'pages/index', { page: 'index', layout: :'layouts/index_layout' }
-end
+    css :app, [
+      '/css/*.css'
+    ]
 
-get '/learn' do
-  haml :'pages/learn'
-end
+    js_compression  :uglify
+    css_compression :sass
+    prebuild true
+  end
 
-get '/discuss' do
-  haml :'pages/discuss', locals: { page: 'discuss' }
-end
+  Tumblr.configure do |config|
+    config.consumer_key = ENV['SPACE_INIT_TUMBLR_OAUTH_CONSUMER']
+    config.consumer_secret = ENV['SPACE_INIT_TUMBLR_OAUTH_SECRET']
+    config.oauth_token = ENV['SPACE_INIT_TUMBLR_OAUTH_TOKEN']
+    config.oauth_token_secret = ENV['SPACE_INIT_TUMBLR_OAUTH_TOKEN_SECRET']
+  end
 
-get '/events' do
-  haml :'pages/events'
-end
+  #########
+  # Pages #
+  #########
 
-get '/act' do
-  haml :'pages/act'
-end
+  get '/' do
+    haml :'pages/index', locals: { page: 'index' }
+  end
 
-get '/about' do
-  haml :'pages/about'
-end
+  get '/learn' do
+    haml :'pages/learn', locals: { page: 'learn' }
+  end
 
-get '/contact' do
-  haml :'pages/contact'
-end
+  get '/discuss' do
+    haml :'pages/discuss', locals: { page: 'discuss' }
+  end
 
-get '/about_site' do
-  haml :'pages/about_site'
-end
+  get '/events' do
+    haml :'pages/events', locals: { page: 'events' }
+  end
 
-get '/api/tumblr/posts' do
-  yajl :'api/tumblr/posts'
+  get '/act' do
+    haml :'pages/act', locals: { page: 'act' }
+  end
+
+  get '/about' do
+    haml :'pages/about', locals: { page: 'about' }
+  end
+
+  get '/contact' do
+    haml :'pages/contact', locals: { page: 'contact' }
+  end
+
+  get '/about_site' do
+    haml :'pages/about_site', locals: { page: 'about_site' }
+  end
+
+  #######
+  # API #
+  #######
+
+  get '/api/tumblr/posts' do
+    yajl :'api/tumblr/posts'
+  end
+
+  run! if app_file == $0
 end
