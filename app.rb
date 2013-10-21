@@ -32,7 +32,6 @@ class App < Sinatra::Base
 
     js_compression  :uglify
     css_compression :sass
-    prebuild true
   end
 
   Tumblr.configure do |config|
@@ -75,7 +74,7 @@ class App < Sinatra::Base
   end
 
   get '/about_site' do
-    haml :'pages/about_site', locals: { page: 'about_site' }
+    haml :'pages/about_site', locals: { page: 'aboutSite' }
   end
 
   #######
