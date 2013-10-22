@@ -6,6 +6,7 @@ require 'haml'
 require 'sass'
 require 'tumblr_client'
 require 'newrelic_rpm'
+require 'json'
 
 # Space initiative application class
 class App < Sinatra::Base
@@ -33,6 +34,7 @@ class App < Sinatra::Base
 
     js_compression  :uglify
     css_compression :sass
+    prebuild true
   end
 
   Tumblr.configure do |config|
@@ -83,7 +85,10 @@ class App < Sinatra::Base
   #######
 
   get '/api/tumblr/posts.json' do
-    load '/api/tumblr/posts'
+    content_type :json
+
+    tumblrPosts = TumblrFeed.get(5)
+    tumblrPosts.to_json
   end
 
   run! if app_file == $PROGRAM_NAME
