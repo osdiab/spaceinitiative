@@ -4,39 +4,45 @@ Stanford Student Space Initiative
 Website for Stanford Spaceflight Initiative. Copyright Omar Diab, Sept 17,
 2013 under the MIT license.
 
-# Installing on your machine
+# Installing Rubinius on your machine
 
-## Ubuntu
+## Mac and Unix distros
 
-Once Rubinius 2 is on package managers and Heroku properly (next week or two),
-you can use that; but until then, this is the deal:
+Choose your favorite way of installing Rubinius 2.1.1. That could be using a
+Ruby version manager like [rvm](http://rvm.io/), using
+[homebrew](http://brew.sh/) to install `rbenv` and `ruby-build`, or going to
+[Rubinius's website](http://rubini.us/) and installing from source using their
+instructions.
 
-1. Check the Gemfile for the correct version of Rubinius to use.
-2. Go to the [Rubinius binary list](http://rubini.us/binaries/index.txt) and
-   find the location of that version
-3. Download the version and untar it.
-4. Place it somewhere on your computer, add the `[rbx-path]/bin` and
-   `[rbx-path]/gem/bin` to your `PATH`
+### `rvm` instructions
+1. Download `rvm` with dotfiles patching by running this command:
 
-## Mac, other Linux that can't run the Ubuntu binaries
-Currently, Rubinius (the Ruby interpreter this project uses) doesn't have a
-Heroku binary for `rbx-2.1.0`. At the same time, the Rubinius Heroku binaries,
-while accessible, are not compiled for Mac OSX. Hence, this sucks.
+   ```
+   \curl -L https://get.rvm.io | bash -s stable --auto-dotfiles
+   ```
+2. Install `rubinius-2.1.1` using this command:
 
-Current standard procedure: Install `rbx-2.1.0` by going to [Rubinius's
-website](rubini.us) and following the directions. There will be better ways
-using package managers within the next few days/week, so this will change soon.
+   ```
+   rvm install rubinius-2.1.1
+   ```
+   This will take a while.
+3. Set it as your default ruby as so:
+   
+   ```
+   rvm use --default rubinius-2.1.1
+   ```
+
+## Windows
+
+Sorry, Rubinius does not provide support for Windows yet. So your best bet is
+to download [VirtualBox](https://www.virtualbox.org/) and
+[Ubuntu](http://www.ubuntu.com/) (or your favorite distro) and run a virtual
+machine running Linux. Or install a Linux partition. Or ditch Windows and just
+run Linux. Or buy a Mac.
 
 # Running the dev server
 
-* Install all dependencies.
-  * For Ubuntu with the Heroku `rbx` version, just run `bundle install`.
-  * For Others without the Heroku `rbx` version, first copy `Gemfile.2.1.0` to
-    `Gemfile`, and then run `bundle install`.
-
-      NOTE: do NOT commit your changed version of `Gemfile` and `Gemfile.lock`.
-      I know this sucks and is not ideal, but until Heroku has the new Rubinius
-      release binary out, I can't do much else (besides not using Rubinius).
-* To run the web server, just run `./run.sh`. Good deal.
+1. Run `bundle install` to install dependencies.
+2. Run `./run.sh`, and point your  browser to `localhost:5000`. Good deal.
 
 # Happy developing!
