@@ -13,7 +13,7 @@ gem 'therubyrhino'
 
 # assets
 gem 'sinatra-assetpack'
-gem 'uglifier'
+gem 'yui-compressor', require: 'yui/compressor'
 
 # templating
 gem 'haml'

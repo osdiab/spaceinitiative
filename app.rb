@@ -32,9 +32,8 @@ class App < Sinatra::Base
       '/css/*.css'
     ]
 
-    js_compression  :uglify
-    css_compression :sass
-    prebuild true
+    js_compression  :yui
+    css_compression :yui
   end
 
   Tumblr.configure do |config|
