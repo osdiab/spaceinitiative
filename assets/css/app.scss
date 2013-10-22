@@ -54,9 +54,11 @@ a:hover {
 }
 
 // components
+// TODO: make assetpack work so these don't have to be manually included
 
 @import 'lib/textstyle';
 @import 'lib/titlebar';
 @import 'lib/header';
 @import 'lib/footer';
 @import 'lib/nav';
+@import 'lib/ajaxLoader'

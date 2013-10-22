@@ -14,16 +14,20 @@ IndexGet.GCAL_URI = [
     IndexGet.GCAL_MAX_RESULTS,
     '&singleevents=true&sortorder=ascending&futureevents=true'
   ].join('')
-
+IndexGet.GCAL_SCRIPT_ELEM = 'indexGcalLoader'
 
 IndexGet.init = function() {
+  LoadingAnimation.start('#events')
+
   // launch jsonp request
   var gcalJsonpElem = document.createElement('script')
+  $(gcalJsonpElem).attr('id', IndexGet.GCAL_SCRIPT_ELEM)
   gcalJsonpElem.src = IndexGet.GCAL_URI
   $('#head').append(gcalJsonpElem)
 }
 
 IndexGet.displayEvents = function(data) {
+  LoadingAnimation.stop('#events')
   var events = new Events(data.feed.entry)
   events.displayFeed('#events')
 }
