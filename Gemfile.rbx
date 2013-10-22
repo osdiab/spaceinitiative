@@ -1,7 +1,10 @@
 # encoding: UTF-8
 
 source 'https://rubygems.org'
-ruby '1.9.3', engine: 'jruby', engine_version: '1.7.5'
+
+# rubinius
+ruby '2.1.0', engine: 'rbx', engine_version: '2.1.1'
+gem 'rubysl'
 
 # core
 gem 'sinatra', '1.4.3'
@@ -9,7 +12,7 @@ gem 'puma'
 gem 'rake'
 gem 'mongoid'
 gem 'foreman'
-gem 'therubyrhino'
+gem 'therubyracer'
 
 # assets
 gem 'sinatra-assetpack'
@@ -19,7 +22,7 @@ gem 'uglifier'
 gem 'haml'
 gem 'markdown'
 gem 'sass'
-gem 'json'
+gem 'yajl-ruby'
 
 # monitoring
 gem 'newrelic_rpm'
@@ -30,5 +33,5 @@ gem 'tumblr_client'
 group :development, :test do
   gem 'pre-commit'
   gem 'rspec' # unit testing
-  gem 'rubocop' # linting
+  #gem 'rubocop' # linting, disabled until Parser gets 2.1.0 support
 end

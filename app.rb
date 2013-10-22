@@ -3,11 +3,11 @@
 require 'sinatra/base'
 require 'sinatra/assetpack'
 require 'haml'
-require 'yajl'
 require 'sass'
 require 'tumblr_client'
 require 'newrelic_rpm'
 
+# Space initiative application class
 class App < Sinatra::Base
   #################
   # Configuration #
@@ -15,7 +15,8 @@ class App < Sinatra::Base
   set :root, File.dirname(__FILE__)
   register Sinatra::AssetPack
 
-  set :scss, { load_paths: [ "#{App.root}/assets/css" ] }
+  set :scss, { load_paths: ["#{App.root}/assets/css"] }
+
   assets do
     serve '/js', from: 'assets/js'
     serve '/css', from: 'assets/css'
@@ -81,9 +82,9 @@ class App < Sinatra::Base
   # API #
   #######
 
-  get '/api/tumblr/posts' do
-    yajl :'api/tumblr/posts'
+  get '/api/tumblr/posts.json' do
+    load '/api/tumblr/posts'
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
