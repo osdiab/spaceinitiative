@@ -9,9 +9,9 @@ Website for Stanford Spaceflight Initiative. Copyright Omar Diab, Sept 17,
 ## Mac and Unix distros
 
 Choose your favorite way of installing Rubinius 2.1.1. That could be using a
-Ruby version manager like [rvm](http://rvm.io/), using
-[homebrew](http://brew.sh/) to install `rbenv` and `ruby-build`, or going to
-[Rubinius's website](http://rubini.us/) and installing from source using their
+Ruby version manager like [rvm](http://rvm.io/), or on Mac, using
+[homebrew](http://brew.sh/) to install `rbenv` and `ruby-build`, or just go to
+[Rubinius's website](http://rubini.us/) and install from source using their
 instructions.
 
 ### `rvm` instructions
@@ -27,7 +27,7 @@ instructions.
    ```
    This will take a while.
 3. Set it as your default ruby as so:
-   
+
    ```
    rvm use --default rubinius-2.1.1
    ```
