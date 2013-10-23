@@ -9,7 +9,7 @@ class TumblrFeed
     @client = Tumblr::Client.new
   end
 
-  def get(numPosts)
-    @client.posts @site
+  def get(num_posts)
+    @client.posts @site, limit: num_posts
   end
 end

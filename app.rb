@@ -96,8 +96,8 @@ class App < Sinatra::Base
 
   get '/api/tumblr/posts.json' do
     content_type :json
-    feed = TumblrFeed.new(settings.tumblr_site)
-    posts = feed.get(5)
+    feed = TumblrFeed.new(params[:uri])
+    posts = feed.get(params[:num_posts])
     posts.to_json
   end
 
