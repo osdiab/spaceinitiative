@@ -15,19 +15,41 @@ IndexGet.GCAL_URI = [
     '&singleevents=true&sortorder=ascending&futureevents=true'
   ].join('')
 IndexGet.GCAL_SCRIPT_ELEM = 'indexGcalLoader'
+IndexGet.EVENTS_ELEM = '#events'
+
+IndexGet.NEWS_NUM_POSTS = 5
+IndexGet.NEWS_URI = 'omardiab.tumblr.com'
+IndexGet.NEWS_ELEM = '#news'
 
 IndexGet.init = function() {
-  LoadingAnimation.start('#events')
+  this.loadNews()
+  this.loadEvents()
+}
+
+IndexGet.loadNews = function() {
+  LoadingAnimation.start(this.NEWS_ELEM)
+  $.get('/api/tumblr/posts.json', {
+    uri: this.NEWS_URI,
+    num_posts: this.NEWS_NUM_POSTS
+  }).done(function(data) {
+    LoadingAnimation.stop(IndexGet.NEWS_ELEM)
+    var news = new News(data)
+    news.render(IndexGet.NEWS_ELEM)
+  })
+}
+
+IndexGet.loadEvents = function() {
+  LoadingAnimation.start(this.EVENTS_ELEM)
 
   // launch jsonp request
   var gcalJsonpElem = document.createElement('script')
-  $(gcalJsonpElem).attr('id', IndexGet.GCAL_SCRIPT_ELEM)
-  gcalJsonpElem.src = IndexGet.GCAL_URI
+  $(gcalJsonpElem).attr('id', this.GCAL_SCRIPT_ELEM)
+  gcalJsonpElem.src = this.GCAL_URI
   $('#head').append(gcalJsonpElem)
 }
 
 IndexGet.displayEvents = function(data) {
-  LoadingAnimation.stop('#events')
+  LoadingAnimation.stop(this.EVENTS_ELEM)
   var events = new Events(data.feed.entry)
-  events.displayFeed('#events')
+  events.render(this.EVENTS_ELEM)
 }

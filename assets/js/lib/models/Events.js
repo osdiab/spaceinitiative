@@ -6,7 +6,7 @@ Events.GCAL_TIME_FORMAT = 'YYYY-MM-DDThh:mm:ss.SSSZ'
 Events.START_OUTPUT_FORMAT = 'dddd MMM DD YYYY, h:mm a'
 Events.END_OUTPUT_FORMAT = 'h:mm a'
 
-Events.prototype.displayFeed = function (div)
+Events.prototype.render = function(outputElem)
 {
   var eventList = document.createElement('ul')
   $(eventList).attr('class', 'eventList')
@@ -16,9 +16,9 @@ Events.prototype.displayFeed = function (div)
     var listElem = document.createElement('li')
     $(listElem).attr('class', 'eventElem')
 
-    var heading = document.createElement('h2')
-    $(heading).attr('class', 'eventHdr')
-    $(heading).text(event.title.$t)
+    var title = document.createElement('h2')
+    $(title).attr('class', 'eventTitle')
+    $(title).text(event.title.$t)
 
     var description = document.createElement('p')
     $(description).attr('class', 'eventTime')
@@ -34,11 +34,11 @@ Events.prototype.displayFeed = function (div)
     $(description).text(startTime + ' to ' + endTime)
 
     // append generated elements
-    $(listElem).append(heading)
+    $(listElem).append(title)
     $(listElem).append(description)
     $(eventList).append(listElem)
   })
 
-  // set div contents to contain generated event list
-  $(div).append(eventList)
+  // set outputElem contents to contain generated event list
+  $(outputElem).append(eventList)
 }
