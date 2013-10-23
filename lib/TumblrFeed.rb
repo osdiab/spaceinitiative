@@ -6,9 +6,10 @@ require 'tumblr_client'
 class TumblrFeed
   def initialize(site)
     @site = site
+    @client = Tumblr::Client.new
   end
 
   def get(numPosts)
-
+    @client.posts @site
   end
 end

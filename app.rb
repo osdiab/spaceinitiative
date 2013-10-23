@@ -8,16 +8,26 @@ require 'tumblr_client'
 require 'newrelic_rpm'
 require 'json'
 
+# load all libs
+Dir[File.dirname(__FILE__) + '/lib/*.rb'].each do |file|
+  require file
+end
+
 # Space initiative application class
 class App < Sinatra::Base
   #################
   # Configuration #
   #################
-  set :root, File.dirname(__FILE__)
-  register Sinatra::AssetPack
+  configure do
+    set :tumblr_site, 'omardiab.tumblr.com'
+  end
 
+  # SCSS
   set :scss, { load_paths: ["#{App.root}/assets/css"] }
 
+  # Sinatra-assetpack
+  set :root, File.dirname(__FILE__)
+  register Sinatra::AssetPack
   assets do
     serve '/js', from: 'assets/js'
     serve '/css', from: 'assets/css'
@@ -36,6 +46,7 @@ class App < Sinatra::Base
     css_compression :yui
   end
 
+  # Tumblr
   Tumblr.configure do |config|
     config.consumer_key = ENV['SPACE_INIT_TUMBLR_OAUTH_CONSUMER']
     config.consumer_secret = ENV['SPACE_INIT_TUMBLR_OAUTH_SECRET']
@@ -85,9 +96,9 @@ class App < Sinatra::Base
 
   get '/api/tumblr/posts.json' do
     content_type :json
-
-    tumblrPosts = TumblrFeed.get(5)
-    tumblrPosts.to_json
+    feed = TumblrFeed.new(settings.tumblr_site)
+    posts = feed.get(5)
+    posts.to_json
   end
 
   run! if app_file == $PROGRAM_NAME
