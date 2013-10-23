@@ -30,12 +30,12 @@ body {
 }
 
 .contentPane {
-  padding: 1.5em;
+  padding: 3em;
 }
 
 // sticky footer Opera fixes (lol CSS)
 body:before {
-  content: "";
+  content: '';
   height: 100%;
   float: left;
   width: 0;
