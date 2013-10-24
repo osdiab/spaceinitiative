@@ -1,12 +1,7 @@
 # encoding: UTF-8
 
 source 'https://rubygems.org'
-group :production, :test do
-  ruby '1.9.3', engine: 'jruby', engine_version: '1.7.5'
-end
-group :development do
-  ruby '1.9.3'
-end
+ruby '1.9.3', engine: 'jruby', engine_version: '1.7.5'
 
 # core
 gem 'sinatra', '1.4.3'
