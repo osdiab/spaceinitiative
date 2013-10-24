@@ -124,6 +124,7 @@ DEPENDENCIES
   sass
   sinatra (= 1.4.3)
   sinatra-assetpack
+  therubyracer
   therubyrhino
   tumblr_client
   yui-compressor
