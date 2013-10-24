@@ -25,6 +25,3 @@ log/
 
 # public assets [configured by sinatra-assetpack]
 public/
-
-# Gemfile.lock (since it differs depending on dev Ruby implementation)
-Gemfile.lock
