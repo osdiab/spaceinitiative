@@ -1,0 +1,117 @@
+#!/bin/bash
+
+function abort {
+  echo "Aborting!"
+  exit 1
+}
+
+function isMac {
+  local  __resultvar=$1
+  if [ "$(uname)" == "Darwin" ]; then
+    eval $__resultvar=true
+  else
+    eval $__resultvar=false
+  fi
+}
+
+function isDebian {
+  local __resultvar=$1
+  if [ -f /etc/debian_version ]; then
+    eval $__resultvar=true
+  else
+    eval $__resultvar=false
+  fi
+}
+
+function exists {
+  local  __resultvar=$2
+  if hash $1 2>/dev/null; then
+    eval $__resultvar=true
+  else
+    eval $__resultvar=false
+  fi
+}
+
+isMac mac
+isDebian debian
+
+if $mac; then
+  exists brew result
+  if $result; then
+    echo "Homebrew already installed. Great!"
+  else
+    echo "Homebrew not installed. Install it first, see http://brew.sh/ for details."
+    abort
+  fi
+fi
+
+exists ruby result
+if $result; then
+  echo "Ruby installed. Good job."
+else
+  echo "Please install Ruby first. See the project docs."
+  abort
+fi
+
+exists rubocop result
+if $result; then
+  echo "Rubocop already installed. Nice!"
+else
+  echo "Installing Rubocop..."
+  gem install rubocop
+
+  if [ $? -ne 0 ]; then
+    echo "Rubocop failed to install."
+    abort
+  fi
+fi
+
+exists npm result
+if $result; then
+  echo "npm already installed. Stellar!"
+else
+  echo "Installing node.js and npm..."
+
+  if $mac; then
+    brew install node
+  elif $debian; then
+    sudo apt-get install nodejs
+  fi
+
+  if [ $? -ne 0 ]; then
+    echo "Node failed to install."
+    abort
+  fi
+fi
+
+exists jshint result
+if $result; then
+  echo "jshint already installed. You're great!"
+else
+  echo "Installing jshint..."
+  npm install -g jshint
+  if [ $? -ne 0 ]; then
+    echo "Installing jshint failed. Did node install properly?"
+    abort
+  fi
+fi
+
+exists gjslint result
+if $result; then
+  echo "gjslint already installed. Wow!"
+else
+  echo "Trying to install gjslint..."
+  exists easy_install result
+  if $result; then
+    sudo easy_install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz
+    if [ $? -ne 0 ]; then
+      echo "Installing gjslint failed. Follow the directions here to install:"
+      echo "https://developers.google.com/closure/utilities/docs/linter_howto"
+      abort
+    fi
+  else
+    echo "easy_install does not exist. Make sure python is installed!"
+    echo "Then, run this script again."
+    abort
+  fi
+fi
