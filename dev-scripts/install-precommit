@@ -3,5 +3,5 @@
 gem install pre-commit
 cd ..
 pre-commit install
-git config "pre-commit.checks" "white_space, rspec_focus, merge_conflict, rubocop"
+git config "pre-commit.checks" "white_space, rspec_focus, merge_conflict, rubocop, jshint"
 cd dev-scripts
