@@ -9,11 +9,16 @@ Initiative, Sept 17, 2013 under the MIT license.
 ## Local Ruby version
 
 While the project uses JRuby, during development I encourage you to not use
-JRuby. This is because it takes a long time to load, which makes linting your
-code with Rubocop annoyingly slow. When you're developing, remove the line in
+JRuby. This is because it takes a long time to load, which makes using some
+Ruby code tools annoyingly slow. When you're developing, comment the line in
 the `Gemfile` that starts with `ruby '1.9.3'...`, and run `bundle install`.
 Then, you can restore `Gemfile` to its original form again. This will let you
 use MRI, the default Ruby implementation, during development.
+
+But do NOT commit the modified Gemfile.lock file!
+
+I hope to get rid of this annoyance once Rubinius settles down, in part by
+using that implementation fully. Can't wait :)
 
 ## Actually running the server
 
@@ -23,13 +28,17 @@ It's simple! Just...
    using JRuby.
 2. Run `./run.sh`, and point your  browser to `localhost:5000`. Good deal.
 
-### Notes on development
+# Coding standards
 
-Once you've started the dev server, you will need to restart it if you add any
-assets that didn't exist before. You also need to restart the server if you
-update the actual `app.rb` file, or configuration for Sinatra's runtime itself.
-But, if you edit an existing view or asset, that will reflect immediately
-without restarting the server.
+This project uses tools to automatically check basic code quality. They are as
+follows:
+
+Ruby: `rubocop`
+Javascript: `jshint` and `gjslint`
+
+These tools will help standardize the code base at least a little. To install,
+run the `install-linters` and `install-precommit` scripts in the `dev-scripts`
+folder. They support Mac and Debian (Ubuntu, Linux Mint...) operating systems.
 
 # The stack
 
