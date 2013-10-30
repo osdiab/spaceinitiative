@@ -40,6 +40,11 @@ These tools will help standardize the code base at least a little. To install,
 run the `install-linters` and `install-precommit` scripts in the `dev-scripts`
 folder. They support Mac and Debian (Ubuntu, Linux Mint...) operating systems.
 
+# Access to Tumblr credentials
+
+If you need to work with the Tumblr news feed, let me know and I'll give you
+the credentials to add to your environment.
+
 # The stack
 
 This site runs on JRuby on the Puma webserver.
