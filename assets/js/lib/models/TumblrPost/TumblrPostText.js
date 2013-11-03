@@ -11,6 +11,7 @@
 function TumblrPostText(data)
 {
   TumblrPost.call(this, data);
+  this.title = data.title;
 }
 
 // subclass
@@ -26,15 +27,7 @@ TumblrPostText.prototype.constructor = TumblrPostText;
  * Renders an text post to the output element specified
  * @param {string} outputElem Page element to output to
  */
-TumblrPostText.prototype.render = function(outputElem)
+TumblrPostText.prototype.renderContent = function(outputElem)
 {
-  var title = document.createElement('h2');
-  $(title).attr('class', 'newsTitle');
-  $(title).text(this.data.title);
-  var body = document.createElement('span');
-  $(body).attr('class', 'newsBody');
-  $(body).html(this.data.body);
-
-  $(outputElem).append(title);
-  $(outputElem).append(body);
+  $(outputElem).html(this.data.body);
 };

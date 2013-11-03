@@ -11,6 +11,7 @@
 function TumblrPostPhoto(data)
 {
   TumblrPost.call(this, data);
+  this.title = $(data.caption).text();
 }
 
 // subclass
@@ -26,7 +27,12 @@ TumblrPostPhoto.prototype.constructor = TumblrPostPhoto;
  * Renders a photo post to the output element specified
  * @param {string} outputElem Page element to output to
  */
-TumblrPostPhoto.prototype.render = function(outputElem)
+TumblrPostPhoto.prototype.renderContent = function(outputElem)
 {
-  $(outputElem).text('This is a photo. Caption: ' + this.data.caption);
+  $(this.data.photos).each(function(index, photo_data) {
+    var img = document.createElement('img');
+    $(img).attr('class', 'newsPhoto');
+    $(img).attr('src', photo_data.original_size.url);
+    $(outputElem).append(img);
+  });
 };
