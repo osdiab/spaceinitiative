@@ -49,7 +49,7 @@ Events.prototype.render = function(outputElem)
     $(title).text(event.title.$t);
 
     var description = document.createElement('p');
-    $(description).attr('class', 'eventTime');
+    $(description).attr('class', 'eventDate');
 
     // calculate start time
     var startTime = moment(event.gd$when[0].startTime, Events.GCAL_TIME_FORMAT);
@@ -59,7 +59,7 @@ Events.prototype.render = function(outputElem)
     var endTime = moment(event.gd$when[0].endTime, Events.GCAL_TIME_FORMAT);
     endTime = endTime.format(Events.END_OUTPUT_FORMAT);
 
-    $(description).text(startTime + ' to ' + endTime);
+    $(description).text(startTime + ' – ' + endTime);
 
     // append generated elements
     $(listElem).append(title);

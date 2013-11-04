@@ -26,7 +26,7 @@ TumblrPostChat.prototype.constructor = TumblrPostChat;
  * Renders a chat post to the output element specified
  * @param {string} outputElem Page element to output to
  */
-TumblrPostChat.prototype.render = function(outputElem)
+TumblrPostChat.prototype.renderContent = function(outputElem)
 {
   $(outputElem).text('This is a Chat');
 };

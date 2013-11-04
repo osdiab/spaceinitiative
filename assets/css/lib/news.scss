@@ -1,7 +1,7 @@
 @import 'constants';
 
 #newsPane {
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .newsList {
@@ -9,13 +9,11 @@
 }
 
 .newsElem {
-  border-bottom: 1px solid #bbb;
-  padding: 0 1em;
+  border-bottom: 1px solid $separatorColor;
+  padding: .75em 1em;
 }
 
 .newsBody {
-  padding-left: 0 2em;
-
   ul, ol {
     padding-left: 1em;
     margin: 1em;
@@ -33,6 +31,7 @@
 }
 
 .newsPhoto {
+  padding: 1.5em;
   display: block;
   margin: 0 auto;
 }

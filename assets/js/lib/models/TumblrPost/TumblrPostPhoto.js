@@ -34,5 +34,12 @@ TumblrPostPhoto.prototype.renderContent = function(outputElem)
     $(img).attr('class', 'newsPhoto');
     $(img).attr('src', photo_data.original_size.url);
     $(outputElem).append(img);
+
+    if (photo_data.caption !== '') {
+      var caption = document.createElement('caption');
+      $(caption).attr('class', 'newsPhotoCaption');
+      $(caption).text(photo_data.caption);
+      $(outputElem).append(img);
+    }
   });
 };

@@ -26,7 +26,7 @@ TumblrPostAudio.prototype.constructor = TumblrPostAudio;
  * Renders an audio post to the output element specified
  * @param {string} outputElem Page element to output to
  */
-TumblrPostAudio.prototype.render = function(outputElem)
+TumblrPostAudio.prototype.renderContent = function(outputElem)
 {
   $(outputElem).text('This is a Audio');
 };

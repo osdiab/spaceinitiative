@@ -1,0 +1,19 @@
+@import 'constants';
+
+#eventsPane {
+}
+
+.eventList {
+  list-style: none;
+}
+
+.eventElem {
+  border-bottom: 1px solid $separatorColor;
+  padding: .75em 1em;
+}
+
+.eventDate {
+  font-style: italic;
+  font-size: .75em;
+  width: 100%;
+}

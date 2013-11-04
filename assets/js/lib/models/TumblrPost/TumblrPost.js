@@ -49,7 +49,7 @@ TumblrPost.formatDate = function(date)
  */
 TumblrPost.prototype.createTitle = function()
 {
-  var title_elem = document.createElement('h3');
+  var title_elem = document.createElement('h2');
   $(title_elem).attr('class', 'newsTitle');
   $(title_elem).text(this.title);
   return title_elem;

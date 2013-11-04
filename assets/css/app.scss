@@ -44,7 +44,7 @@ body:before {
 
 // styling
 
-#pageHeading {
+.pageHeading {
   padding-top: 0;
   margin-top: 0;
 }
@@ -63,3 +63,4 @@ a:hover {
 @import 'lib/nav';
 @import 'lib/ajaxLoader';
 @import 'lib/news';
+@import 'lib/events';
