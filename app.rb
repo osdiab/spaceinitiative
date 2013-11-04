@@ -82,6 +82,10 @@ class App < Sinatra::Base
     haml :'pages/about', locals: { page: 'about' }
   end
 
+  get '/mission' do
+    haml :'pages/mission', locals: { page: 'mission' }
+  end
+
   get '/contact' do
     haml :'pages/contact', locals: { page: 'contact' }
   end
