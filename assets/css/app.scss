@@ -30,6 +30,7 @@ body {
 }
 
 .contentPane {
+  position: relative;
   padding: 2em 3em;
 }
 
@@ -52,6 +53,15 @@ body:before {
 a:hover {
   color: $linkHoverColor;
 }
+
+// misc
+#githubBanner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
 
 // components
 // TODO: make assetpack work so these don't have to be manually included
