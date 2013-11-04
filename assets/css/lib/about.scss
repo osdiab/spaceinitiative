@@ -1,0 +1,29 @@
+#aboutPane {
+  $bg: '/images/lecture.jpg';
+  background: url($bg);
+  background-size: cover;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  cursor: hand;
+}
+
+#aboutShadow {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8em;
+}
+
+#aboutPaneText {
+  max-width: 800px;
+  margin: auto;
+}
+
+#aboutMissionBtn {
+  text-align: center;
+  font-size: 150%;
+  padding: 1.5em;
+}
+
+#aboutMissionLink{
+  text-decoration: none;
+}
