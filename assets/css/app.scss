@@ -31,7 +31,10 @@ body {
 
 .contentPane {
   position: relative;
-  padding: 2em 3em;
+}
+
+.pane {
+  padding: 1.5em 3em;
 }
 
 // sticky footer Opera fixes (lol CSS)
@@ -45,9 +48,15 @@ body:before {
 
 // styling
 
-#pageHeading {
-  padding-top: 0;
-  margin-top: 0;
+.sectionHeading {
+  max-width: 100%;
+  padding: .5em 1.5em;
+  text-align: center;
+  color: $cardinalRed;
+  background: $sectionBackgroundColor;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: $separatorColor;
 }
 
 a:hover {

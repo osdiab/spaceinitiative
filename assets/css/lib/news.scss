@@ -1,6 +1,6 @@
 @import 'constants';
 
-#newsPane {
+#news {
   max-width: 600px;
 }
 
@@ -11,6 +11,14 @@
 .newsElem {
   border-bottom: 1px solid $separatorColor;
   padding: .75em 1em;
+}
+
+.newsElem:first-child {
+  padding-top: 0;
+
+  .newsTitle {
+    padding-top: 0;
+  }
 }
 
 .newsBody {
