@@ -44,12 +44,15 @@ Events.prototype.render = function(outputElem)
     var listElem = document.createElement('li');
     $(listElem).attr('class', 'eventElem');
 
+    // extract title
     var title = document.createElement('h2');
     $(title).attr('class', 'eventTitle');
     $(title).text(event.title.$t);
+    $(listElem).append(title);
 
-    var description = document.createElement('p');
-    $(description).attr('class', 'eventDate');
+    // extract date
+    var dateElem = document.createElement('span');
+    $(dateElem).attr('class', 'eventDate');
 
     // calculate start time
     var startTime = moment(event.gd$when[0].startTime, Events.GCAL_TIME_FORMAT);
@@ -59,11 +62,18 @@ Events.prototype.render = function(outputElem)
     var endTime = moment(event.gd$when[0].endTime, Events.GCAL_TIME_FORMAT);
     endTime = endTime.format(Events.END_OUTPUT_FORMAT);
 
-    $(description).text(startTime + ' – ' + endTime);
+    $(dateElem).text(startTime + ' – ' + endTime);
+    $(listElem).append(dateElem);
+
+    // extract description
+    if (event.content.$t) {
+      var description = document.createElement('p');
+      $(description).attr('class', 'eventDesc');
+      $(description).text(event.content.$t);
+      $(listElem).append(description);
+    }
 
     // append generated elements
-    $(listElem).append(title);
-    $(listElem).append(description);
     $(eventList).append(listElem);
   });
 
