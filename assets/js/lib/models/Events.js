@@ -45,10 +45,16 @@ Events.prototype.render = function(outputElem)
     $(listElem).attr('class', 'eventElem');
 
     // extract title
+    var titleLink = document.createElement('a');
+    $(titleLink).attr('class', 'eventTitleLink');
+    $(titleLink).attr('href', event.link[0].href);
+
     var title = document.createElement('h2');
     $(title).attr('class', 'eventTitle');
     $(title).text(event.title.$t);
-    $(listElem).append(title);
+
+    $(titleLink).append(title);
+    $(listElem).append(titleLink);
 
     // extract date
     var dateElem = document.createElement('span');
