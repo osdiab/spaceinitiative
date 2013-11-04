@@ -49,10 +49,14 @@ TumblrPost.formatDate = function(date)
  */
 TumblrPost.prototype.createTitle = function()
 {
-  var title_elem = document.createElement('h2');
-  $(title_elem).attr('class', 'newsTitle');
-  $(title_elem).text(this.title);
-  return title_elem;
+  if (this.title && this.title !== '') {
+    var title_elem = document.createElement('h2');
+    $(title_elem).attr('class', 'newsTitle');
+    $(title_elem).text(this.title);
+    return title_elem;
+  } else {
+    return null;
+  }
 };
 
 /**
@@ -74,7 +78,10 @@ TumblrPost.prototype.createDate = function(date)
  */
 TumblrPost.prototype.render = function(outputElem)
 {
-  $(outputElem).append(this.createTitle());
+  var titleElem = this.createTitle();
+  if (titleElem) {
+    $(outputElem).append(this.createTitle());
+  }
   $(outputElem).append(this.createDate());
 
   // render and add body
