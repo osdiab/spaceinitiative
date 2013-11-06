@@ -19,7 +19,7 @@ class App < Sinatra::Base
   # Configuration #
   #################
   configure do
-    set :tumblr_site, 'omardiab.tumblr.com'
+    set :tumblr_site, 'spaceinitiative.tumblr.com'
   end
 
   # SCSS

@@ -18,7 +18,7 @@ IndexGet.GCAL_SCRIPT_ELEM = 'indexGcalLoader';
 IndexGet.EVENTS_ELEM = '#events';
 
 IndexGet.NEWS_NUM_POSTS = 5;
-IndexGet.NEWS_URI = 'omardiab.tumblr.com';
+IndexGet.NEWS_URI = 'spaceinitiative.tumblr.com';
 IndexGet.NEWS_ELEM = '#news';
 
 IndexGet.init = function() {
