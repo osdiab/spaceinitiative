@@ -59,39 +59,39 @@ class App < Sinatra::Base
   #########
 
   get '/' do
-    haml :'pages/index', locals: { page: 'index' }
+    haml 'pages/index'.to_sym, locals: { page: 'index' }
   end
 
   get '/learn' do
-    haml :'pages/learn', locals: { page: 'learn' }
+    haml 'pages/learn'.to_sym, locals: { page: 'learn' }
   end
 
   get '/discuss' do
-    haml :'pages/discuss', locals: { page: 'discuss' }
+    haml 'pages/discuss'.to_sym, locals: { page: 'discuss' }
   end
 
   get '/events' do
-    haml :'pages/events', locals: { page: 'events' }
+    haml 'pages/events'.to_sym, locals: { page: 'events' }
   end
 
   get '/act' do
-    haml :'pages/act', locals: { page: 'act' }
+    haml 'pages/act'.to_sym, locals: { page: 'act' }
   end
 
   get '/about' do
-    haml :'pages/about', locals: { page: 'about' }
+    haml 'pages/about'.to_sym, locals: { page: 'about' }
   end
 
   get '/mission' do
-    haml :'pages/mission', locals: { page: 'mission' }
+    haml 'pages/mission'.to_sym, locals: { page: 'mission' }
   end
 
   get '/contact' do
-    haml :'pages/contact', locals: { page: 'contact' }
+    haml 'pages/contact'.to_sym, locals: { page: 'contact' }
   end
 
   get '/about_site' do
-    haml :'pages/about_site', locals: { page: 'aboutSite' }
+    haml 'pages/about_site'.to_sym, locals: { page: 'aboutSite' }
   end
 
   #######
