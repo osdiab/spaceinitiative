@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 source 'https://rubygems.org'
-ruby '1.9.3', engine: 'jruby', engine_version: '1.7.5'
+ruby '1.9.3', engine: 'jruby', engine_version: '1.7.8'
 
 # core
 gem 'sinatra', '1.4.3'
@@ -10,12 +10,16 @@ gem 'rake'
 gem 'mongoid'
 gem 'foreman'
 
+# js runtime
 platforms :jruby do
   gem 'therubyrhino'
 end
 platforms :ruby do
   gem 'therubyracer'
 end
+
+# db
+gem 'sequel'
 
 # assets
 gem 'sinatra-assetpack'
