@@ -1,10 +1,14 @@
 .contentPane
   %h1.sectionHeading Join us in bringing Stanford projects, ideas, and people to space.
-  .pane
+  .pane.mainContainer
     :markdown
       ## Join the discussion
 
       Head over to the [discussion page](/discuss) and have your voice heard.
+
+      ## Work on a project
+
+      See the list of projects [below](#projects).
 
       ## Email Us
 
@@ -18,9 +22,15 @@
       If you're on campus, come to one of our events or meetings. If you can't
       make any of the times, email us and we'll respond as quickly as we can.
 
-      # Mailing lists
+      ## Mailing lists
 
       * [General
       conversation](https://mailman.stanford.edu/mailman/listinfo/spaceflight)
       * [SSI
       Newsletter](https://mailman.stanford.edu/mailman/listinfo/ssi_newsletter)
+  %h1#projects.sectionHeading Projects
+  .pane.secondaryContainer
+    - projects.each do |project|
+      %h2= project.name
+      %a{href: "mailto:#{project.contact}"}= project.contact
+      %p= project.description
