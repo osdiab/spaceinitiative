@@ -1,7 +1,10 @@
 # encoding: UTF-8
 
 source 'https://rubygems.org'
-ruby '1.9.3', engine: 'jruby', engine_version: '1.7.8'
+ruby '2.1.0', engine: 'rbx', engine_version: '2.2.1'
+platforms :rbx do
+  gem 'rubysl'
+end
 
 # core
 gem 'sinatra', '1.4.3'
