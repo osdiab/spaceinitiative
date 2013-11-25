@@ -32,5 +32,6 @@
   .pane.secondaryContainer
     - projects.each do |project|
       %h2= project.name
-      %a{href: "mailto:#{project.contact}"}= project.contact
+      %span Contact:
+      %a{href: "mailto:#{project.contact}"}= project.contact_name
       %p= project.description
