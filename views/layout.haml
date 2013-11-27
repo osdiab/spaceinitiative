@@ -5,7 +5,7 @@
     #site
       = haml :'partials/titlebar'
       - if page != 'index'
-        = haml :'partials/headerNav', locals: { hdrClass: 'standard' }
+        = haml :'partials/nav'
       #content= yield
     = haml :'partials/footer'
-    = haml :'partials/appJS', locals: { page: page }
+    = haml :'partials/js', locals: { page: page }

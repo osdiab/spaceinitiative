@@ -40,7 +40,7 @@ class App < Sinatra::Base
   end
 
   get '/about_site' do
-    haml 'pages/about_site'.to_sym, locals: { page: 'aboutSite' }
+    haml 'pages/about_site'.to_sym, locals: { page: 'about_site' }
   end
 
   #TODO: get rid of this with proper database support

@@ -1,5 +1,6 @@
-%div{ id: hdrClass == 'index' ? 'hdrNavContainerIndex' : 'hdrNavContainer' }
-  %div{ id: hdrClass == 'index' ? 'hdrNavShadowIndex' : 'hdrNavShadow' }
+- index ||= false
+%div{ id: index ? 'hdrNavContainerIndex' : 'hdrNavContainer' }
+  %div{ id: index ? 'hdrNavShadowIndex' : 'hdrNavShadow' }
     %ul#hdrNav.navList
       %li
         %a.hdrLink.navLink{href: '/about'} About
