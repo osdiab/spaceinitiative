@@ -25,3 +25,6 @@ log/
 
 # public assets [configured by sinatra-assetpack]
 public/
+
+# dev database
+spaceinitiative.db
