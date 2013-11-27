@@ -12,10 +12,13 @@
       We want the Stanford community to gain the knowledge, experience,
       network, and resources to guide that future.
 
-  #aboutPane{onclick: 'location.href=\'/act\''}
-    #aboutShadow
-      #aboutText
-        %h1 Join us in shaping space exploration and turning our dreams into reality!
+  - paneText = 'Join us in shaping space exploration and turning our '
+  - paneText << 'dreams into reality!'
+  - paneHref = '/act'
+  - paneBg = '/images/lecture.jpg'
+  = haml 'partials/photo_pane'.to_sym, locals: { text: paneText,
+                                                 href: paneHref,
+                                                 bg: paneBg }
 
   #aboutMissionBtn
     %a#aboutMissionLink{href: '/mission'} More details on our mission
