@@ -1,5 +1,7 @@
+- sections = [['Join', 'joinPane'], ['Projects', 'projectsPane']]
+= haml :'partials/pageNav', locals: {sections: sections}
 .contentPane
-  %h1.sectionHeading Join us in bringing Stanford projects, ideas, and people to space.
+  %h1.sectionHeading#joinPane Join us in bringing Stanford projects, ideas, and people to space.
   .pane.mainContainer
     :markdown
       ## Join the discussion
@@ -8,7 +10,7 @@
 
       ## Work on a project
 
-      See the list of projects [below](#projects).
+      See the list of projects [below](#projectsPane).
 
       ## Email Us
 
@@ -28,7 +30,7 @@
       conversation](https://mailman.stanford.edu/mailman/listinfo/spaceflight)
       * [SSI
       Newsletter](https://mailman.stanford.edu/mailman/listinfo/ssi_newsletter)
-  %h1#projects.sectionHeading Projects
+  %h1#projectsPane.sectionHeading Projects
   .pane.secondaryContainer
     - projects.each do |project|
       %h2= project.name

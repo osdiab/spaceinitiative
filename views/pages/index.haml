@@ -1,4 +1,6 @@
 = haml :'partials/header'
+- sections = [['News', 'newsPane'], ['Events', 'eventsPane']]
+= haml :'partials/pageNav', locals: {sections: sections}
 .contentPane
   #newsPane
     %h1.sectionHeading News
