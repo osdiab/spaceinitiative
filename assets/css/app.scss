@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
 @import 'lib/constants';
 
@@ -81,6 +81,7 @@ a:hover {
 @import 'lib/header';
 @import 'lib/footer';
 @import 'lib/nav';
+@import 'lib/pageNav';
 @import 'lib/ajaxLoader';
 @import 'lib/news';
 @import 'lib/events';

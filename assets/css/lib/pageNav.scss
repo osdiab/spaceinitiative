@@ -1,0 +1,33 @@
+@import 'constants';
+
+.pageNav {
+  width: 100;
+  background-color: #efefef;
+}
+
+.pageNavList {
+  margin: 0;
+  padding: 1em 3em;
+  list-style-type: none;
+  text-align: center;
+}
+
+.pageNavElem {
+  display: inline;
+  padding: 0 1.5em;
+
+  &:not(:last-child) {
+    border-right: 2px solid #aaa;
+  }
+
+  a {
+    text-decoration: none;
+    color: #676767;
+    font-weight: 600;
+
+    &:hover {
+      color: $cardinalRed
+    }
+  }
+}
+
