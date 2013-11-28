@@ -4,6 +4,14 @@
  * Entrypoint into application Javascript
  */
 
+// smooth scroll anchor links
+$('a').click(function() {
+  $('html, body').animate({
+    scrollTop: $($.attr(this, 'href')).offset().top
+  }, 500);
+  return false;
+});
+
 $(document).ready(function() {
   // perform global initialization
   initPage();
