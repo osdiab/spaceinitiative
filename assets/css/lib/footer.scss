@@ -7,12 +7,21 @@
 
   background: $cardinalRed;
   color: white;
-  font-size: .8em;
+  font-size: 80%;
+}
+
+#ftrNav {
+  padding-top: .5em;
+  padding-bottom: .5em;
 }
 
 .ftrlink {
   text-decoration: none;
   color: white;
+}
+
+.ftrElem {
+  padding: 0 .75em;
 }
 
 // NOTE: nav styles for footer are in nav.scss.
