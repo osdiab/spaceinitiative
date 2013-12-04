@@ -31,10 +31,6 @@ class App < Sinatra::Base
     haml 'pages/about'.to_sym, locals: { page: 'about' }
   end
 
-  get '/mission' do
-    haml 'pages/mission'.to_sym, locals: { page: 'mission' }
-  end
-
   get '/contact' do
     haml 'pages/contact'.to_sym, locals: { page: 'contact' }
   end
