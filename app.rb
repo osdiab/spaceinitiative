@@ -8,13 +8,17 @@ require 'tumblr_client'
 require 'newrelic_rpm'
 require 'json'
 
-# load all libs
-Dir[File.dirname(__FILE__) + '/lib/*.rb'].each do |file|
-  require file
-end
-
 # Space initiative application class
 class App < Sinatra::Base
+  ROOT = File.dirname(__FILE__)
+  set :root, ROOT
+
+  # Translates relative path of library to actual path, requires it
+  def require_lib(path)
+    path = path[1..-1] if path[0] == '/' # remove first letter if slash
+    require_relative "#{ROOT}/lib/#{path}"
+  end
+
   #################
   # Configuration #
   #################
@@ -26,7 +30,6 @@ class App < Sinatra::Base
   set :scss, load_paths: ["#{App.root}/assets/css"]
 
   # Sinatra-assetpack
-  set :root, File.dirname(__FILE__)
   register Sinatra::AssetPack
   assets do
     serve '/js', from: 'assets/js'
