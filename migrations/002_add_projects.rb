@@ -5,7 +5,9 @@ require 'json'
 
 Sequel.migration do
   up do
-    projects = JSON.parse(IO.read('migration/data/002/initial_projects.json'))
+    projects_file = File.dirname(__FILE__) +
+      '/data/002/initial_projects.json'
+    projects = JSON.parse(IO.read(projects_file))
     projects.each do |project|
       from(:projects).insert(title: project['title'],
                              description: project['description'],
