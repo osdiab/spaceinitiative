@@ -22,9 +22,14 @@ class App < Sinatra::Base
     haml 'pages/people'.to_sym, locals: {page: 'people'}
   end
 
-  get '/act' do
+  get '/join' do
+    haml 'pages/join'.to_sym, locals: { page: 'join' }
+  end
+
+  get '/projects' do
     projects = get_projects
-    haml 'pages/act'.to_sym, locals: { page: 'act', projects: projects }
+    haml 'pages/projects'.to_sym, locals: { page: 'projects',
+                                            projects: projects }
   end
 
   get '/about' do
