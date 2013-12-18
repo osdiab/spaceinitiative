@@ -1,0 +1,8 @@
+.contentPane
+  %h1#projectsPane.sectionHeading Projects
+  .pane.secondaryContainer
+    - projects.each do |project|
+      %h2= project.title
+      %span Contact:
+      %a{href: "mailto:#{project.email}"}= project.contact_name
+      %p= project.description

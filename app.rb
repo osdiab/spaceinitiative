@@ -1,12 +1,13 @@
 # encoding: UTF-8
 
+require 'haml'
+require 'json'
+require 'newrelic_rpm'
+require 'sass'
+require 'sequel'
 require 'sinatra/base'
 require 'sinatra/assetpack'
-require 'haml'
-require 'sass'
 require 'tumblr_client'
-require 'newrelic_rpm'
-require 'json'
 
 # Space initiative application class
 class App < Sinatra::Base
@@ -17,6 +18,20 @@ class App < Sinatra::Base
   def require_lib(path)
     path = path[1..-1] if path[0] == '/' # remove first letter if slash
     require_relative "#{ROOT}/lib/#{path}"
+  end
+
+  ############
+  # Database #
+  ###########
+  if ENV.key? 'SPACE_INIT_DB'
+    db_uri = ENV['SPACE_INIT_DB']
+  else
+    db_uri = 'sqlite://spaceinitiative.db'
+  end
+  begin
+    DB = Sequel.connect db_uri
+  rescue
+    puts 'Database failed to connect! Some features may not work.'
   end
 
   #################
