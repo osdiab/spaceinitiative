@@ -28,3 +28,6 @@ public/
 
 # dev database
 spaceinitiative.db
+
+# mac artifacts
+.DS_STORE
