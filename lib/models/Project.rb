@@ -1,6 +1,6 @@
 # encoding: utf-8
 require 'sequel'
 
-# Representation of a project
+# :projects table, represents a project members can work on
 class Project < Sequel::Model
 end
