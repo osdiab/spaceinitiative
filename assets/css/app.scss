@@ -1,4 +1,5 @@
 @import 'lib/constants';
+@import 'vendor/rem';
 
 * {
   margin: 0;
@@ -15,8 +16,8 @@ html, body {
 
 body {
   font-family: 'Open Sans', 'Helvetica', 'Arial';
-  font-size: 1em;
-  line-height: 1.5em;
+  @include rem('font-size', 16px);
+  @include rem('line-height', 24px);
 }
 
 #site {
@@ -32,9 +33,9 @@ body {
 }
 
 .pane {
-  padding: 1.5em 3em;
   margin: 0 auto;
-  max-width: 50em;
+  @include rem('padding', 24px 48px);
+  @include rem('max-width', 960px);
 }
 
 // sticky footer Opera fixes (lol CSS)
@@ -50,11 +51,11 @@ body:before {
 
 .sectionHeading {
   max-width: 100%;
-  padding: .5em 1.5em;
+  @include rem('padding', 12px 24px);
   text-align: center;
   color: $cardinalRed;
   background: $sectionBackgroundColor;
-  border-width: 1px 0 1px 0;
+  border-width: 1px 0;
   border-style: solid;
   border-color: $separatorColor;
 }
