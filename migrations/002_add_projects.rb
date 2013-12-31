@@ -17,6 +17,6 @@ Sequel.migration do
   end
 
   down do
-    from(:projects).delete_all
+    from(:projects).delete
   end
 end
