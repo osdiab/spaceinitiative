@@ -34,7 +34,10 @@ class App < Sinatra::Base
   end
 
   get '/about' do
-    haml 'pages/about'.to_sym, locals: { page: 'about' }
+    require_lib 'models/Member'
+    members = Member.all
+    haml 'pages/about'.to_sym, locals: { page: 'about',
+                                         members: members }
   end
 
   get '/contact' do

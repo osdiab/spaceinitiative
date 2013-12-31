@@ -1,7 +1,7 @@
-- sections = [['About', 'aboutPane'], ['Mission', 'missionPane']]
+- sections = [['About', 'about'], ['Team', 'team'], ['Mission', 'mission']]
 = haml :'partials/pageNav', locals: {sections: sections}
 .contentPane
-  %h1.sectionHeading#aboutPane Who we are
+  %h1.sectionHeading#about Who we are
   .pane
     :markdown
       SSI is the center of student activities involving space exploration and
@@ -19,8 +19,11 @@
   = haml 'partials/photo_pane'.to_sym, locals: { text: paneText,
                                                  href: paneHref,
                                                  bg: paneBg }
-
-  %h1.sectionHeading#missionPane Our Mission
+  %h1.sectionHeading#team Team
+  .pane
+    - members.each do |member|
+      = haml 'partials/member_preview'.to_sym, locals: { member: member }
+  %h1.sectionHeading#mission Our Mission
   .pane
     :markdown
       Our mission is to change the space culture at Stanford by cultivating
