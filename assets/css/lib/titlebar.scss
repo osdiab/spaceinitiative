@@ -1,21 +1,22 @@
 @import 'constants';
+@import '../vendor/rem';
 
 #titlebar {
   background: $cardinalRed;
   overflow: hidden;
   color: white;
-  padding: 1em 1.5em 1em 1.5em;
+  @include rem('padding', 16px 24px);
 }
 
 #logo {
   float: left;
   display: block;
-  height: 1.75em;
-  margin-top: .375em;
+  @include rem('height', 28px);
+  @include rem('margin-top', 6px);
 }
 
 #stanfordSeal {
   display: block;
-  height: 2.5em;
+  @include rem('height', 40px);
   float: right;
 }

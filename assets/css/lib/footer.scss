@@ -1,4 +1,5 @@
 @import 'constants';
+@import '../vendor/rem';
 
 #footer {
   position: relative;
@@ -7,12 +8,11 @@
 
   background: $cardinalRed;
   color: white;
-  font-size: 80%;
+  @include rem('font-size', 12px);
 }
 
 #ftrNav {
-  padding-top: .5em;
-  padding-bottom: .5em;
+  @include rem('padding', 8px 0);
 }
 
 .ftrlink {
@@ -21,7 +21,7 @@
 }
 
 .ftrElem {
-  padding: 0 .75em;
+  @include rem('padding', 0 12px);
 }
 
 // NOTE: nav styles for footer are in nav.scss.

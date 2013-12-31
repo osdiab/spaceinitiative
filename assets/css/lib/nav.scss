@@ -1,6 +1,8 @@
+@import '../vendor/rem';
+
 .navList {
   margin: 0;
-  padding: 0 3em;
+  @include rem('padding', 0 48px);
   list-style-type: none;
   text-align: center;
 

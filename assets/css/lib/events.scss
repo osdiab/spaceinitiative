@@ -1,4 +1,5 @@
 @import 'constants';
+@import '../vendor/rem';
 
 .eventList {
   list-style: none;
@@ -6,11 +7,12 @@
 
 .eventElem {
   border-bottom: 1px solid $separatorColor;
-  padding: .75em 1em;
+  @include rem('padding', 12px 16px);
 }
 
 .eventDate {
   font-style: italic;
+  @include rem('font-size', 12px);
   font-size: .75em;
   width: 100%;
 }
@@ -20,16 +22,11 @@
 }
 
 #eventsAll {
+  @include rem('padding', 24px);
   padding: 1.5em;
   text-align: right;
 }
 
 #eventsAllLink {
-  font-size: 125%;
-}
-
-#events {
-}
-
-#eventsPagePane {
+  @include rem('font-size', 20px);
 }

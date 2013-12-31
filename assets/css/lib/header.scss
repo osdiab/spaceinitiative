@@ -1,3 +1,5 @@
+@import '../vendor/rem';
+
 #hdr {
   $banner: '/images/banner/spacex-banner-1920.jpg';
 
@@ -10,17 +12,17 @@
 
 #hdrBgShadow {
   background-color: rgba(0, 0, 0, 0.6);
-  padding-top: 3em;
+  @include rem('padding-top', 48px);
 }
 
 #hdrIntro {
-  max-width: 800px;
   margin: 0 auto;
-  padding-bottom: 6em;
+  @include rem('max-width', 800px);
+  @include rem('padding', 64px 32px);
 
   h2 {
-    font-size: 2em;
-    line-height: 1.25em;
+    @include rem('font-size', 32px);
+    @include rem('line-height', 40px);
     padding-top: 0;
     margin-top: 0;
   }
@@ -29,15 +31,15 @@
 .hdrLink {
   text-decoration: none;
   color: white;
-  font-size: 1.5em;
+  @include rem('font-size', 24px);
 }
 
 .hdrElem {
-  padding: 0 1.5em;
+  @include rem('padding', 0 24px);
 }
 
 #aboutHdrLink {
-  font-size: 1.25em;
+  @include rem('font-size', 20px);
 }
 
 @import 'index_nav.scss'

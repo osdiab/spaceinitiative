@@ -1,3 +1,5 @@
+@import '../vendor/rem';
+
 .photoPane {
   background-size: cover;
   color: white;
@@ -8,10 +10,10 @@
 
 .photoPaneShadow {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 8em;
+  @include rem('padding', 128px);
 }
 
 .photoPaneText {
-  max-width: 800px;
+  @include rem('max-width', 800px);
   margin: auto;
 }
