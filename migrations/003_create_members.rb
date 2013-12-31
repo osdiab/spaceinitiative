@@ -11,6 +11,7 @@ Sequel.migration do
       String :bio, null: true
       String :email, null: true
       String :image, null: true
+      String :thumb, null: true
     end
   end
 
