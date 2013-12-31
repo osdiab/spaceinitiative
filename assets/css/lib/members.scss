@@ -1,0 +1,40 @@
+@import 'vendor/rem';
+@import 'constants';
+
+#members {
+  text-align: center;
+}
+
+.member_prev {
+  border: 1px solid #fff;
+  cursor: pointer;
+  cursor: hand;
+  display: inline-block;
+  @include rem('margin', 8px);
+  @include rem('padding', 12px);
+  text-align: center;
+  @include rem('width', 200px);
+
+  &:hover {
+    background-color: $memberBackgroundColor;
+    border: 1px solid $memberBorderColor;
+  }
+}
+
+.member_prev_thumb {
+  @include rem('width', 100px);
+  @include rem('height', 100px);
+  @include rem('border-radius', 50px);
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.member_prev_name {
+  font-weight: 600;
+}
+
+.member_prev_name,
+.member_prev_title {
+  clear: both;
+  display: block;
+}
