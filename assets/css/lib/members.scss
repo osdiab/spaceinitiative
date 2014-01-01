@@ -10,9 +10,10 @@
   cursor: pointer;
   cursor: hand;
   display: inline-block;
-  @include rem('margin', 8px);
+  @include rem('margin', 4px);
   @include rem('padding', 12px);
   text-align: center;
+  vertical-align: text-top;
   @include rem('width', 200px);
 
   &:hover {
