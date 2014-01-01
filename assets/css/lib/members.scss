@@ -1,28 +1,30 @@
-@import 'vendor/rem';
 @import 'constants';
+@import 'vendor/rem';
 
 #members {
   text-align: center;
 }
 
-.member_prev {
-  border: 1px solid #fff;
+.member_card {
   cursor: pointer;
   cursor: hand;
   display: inline-block;
-  @include rem('margin', 4px);
   @include rem('padding', 12px);
+  transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -webkit-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
   text-align: center;
   vertical-align: text-top;
   @include rem('width', 200px);
 
   &:hover {
-    background-color: $memberBackgroundColor;
-    border: 1px solid $memberBorderColor;
+    background-color: $cardinalRed;
+    color: #fff;
   }
 }
 
-.member_prev_thumb {
+.member_card_thumb {
   @include rem('width', 100px);
   @include rem('height', 100px);
   @include rem('border-radius', 50px);
@@ -30,12 +32,12 @@
   max-width: 200px;
 }
 
-.member_prev_name {
+.member_card_name {
   font-weight: 600;
 }
 
-.member_prev_name,
-.member_prev_title {
+.member_card_name,
+.member_card_title {
   clear: both;
   display: block;
 }
