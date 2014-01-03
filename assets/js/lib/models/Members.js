@@ -60,6 +60,13 @@ Members.prototype.render = function(outputElem)
       $(fullMemberCard).toggleClass('full_member_card_clicked', true);
       $(memberCard).toggleClass('member_card_clicked', true);
       $(memberBio).show();
+
+      // scroll to clicked bio after reflow is complete
+      setTimeout(function() {
+        $('html, body').animate({
+          scrollTop: $(fullMemberCard).offset().top
+        }, 500);
+      }, 1);
     });
 
     $(document).click(function(event) {
