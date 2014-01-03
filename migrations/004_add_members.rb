@@ -10,9 +10,11 @@ Sequel.migration do
       '/data/004/initial_members.json'
     members = JSON.parse(IO.read(members_file))
     members.each do |member|
-      filename = member['name'].downcase.gsub(/ /, '-') + '.jpg'
-      member['image'] = "#{root}/full/#{filename}"
-      member['thumb'] = "#{root}/thumbs/#{filename}"
+      if member['name'] != 'Gregory Wolk'
+        filename = member['name'].downcase.gsub(/ /, '-') + '.jpg'
+        member['image'] = "#{root}/full/#{filename}"
+        member['thumb'] = "#{root}/thumbs/#{filename}"
+      end
       from(:members).insert(name: member['name'],
                             title: member['title'],
                             bio: member['bio'],
