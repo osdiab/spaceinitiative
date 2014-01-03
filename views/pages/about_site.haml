@@ -1,7 +1,9 @@
+- sections = [['About this site', 'about'], ['Attributions', 'attributions']]
+= haml :'partials/pageNav', locals: {sections: sections}
 .contentPane
   %a#githubBanner{href: "https://github.com/osdiab/spaceinitiative"}
     = img '/images/github_fork.png', alt: 'Fork me on GitHub'
-  %h1.sectionHeading About this site
+  %h1.sectionHeading#about About this site
   .pane
     :markdown
       This site was written by Omar Diab as an open-source project. That means,
@@ -21,3 +23,9 @@
       Cheers!
 
       -Omar
+  %h1.sectionHeading#attributions Attributions
+  .pane
+    :markdown
+      The following are assets used throughout the site.
+
+      * Man by Justin Alexander from The Noun Project
