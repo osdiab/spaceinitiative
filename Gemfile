@@ -1,6 +1,7 @@
 # encoding: UTF-8
 
 source 'https://rubygems.org'
+#ruby=rbx-2.2.3
 ruby '2.1.0', engine: 'rbx', engine_version: '2.2.3'
 platforms :rbx do
   gem 'rubysl'
