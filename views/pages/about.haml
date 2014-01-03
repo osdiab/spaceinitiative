@@ -20,9 +20,7 @@
                                                  href: paneHref,
                                                  bg: paneBg }
   %h1.sectionHeading#team Team
-  .pane#members
-    - members.each do |member|
-      = haml 'partials/member_preview'.to_sym, locals: { member: member }
+  .pane#member_cards
   %h1.sectionHeading#mission Our Mission
   .pane
     :markdown

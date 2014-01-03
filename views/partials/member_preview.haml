@@ -1,7 +1,0 @@
-.member_card{onclick: 'MemberCard.showBio()'}
-  - if member.thumb.nil?
-    = img '/images/members/man-200.png', class: 'member_card_thumb'
-  - else
-    = img member.thumb, class: 'member_card_thumb'
-  %span.member_card_name= member.name
-  %span.member_card_title= member.title

@@ -1,6 +1,10 @@
 @import 'lib/constants';
 @import 'vendor/rem';
 
+.hidden {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0
