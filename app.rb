@@ -51,10 +51,9 @@ class App < Sinatra::Base
     serve '/css', from: 'assets/css'
     serve '/images', from: 'assets/images'
 
-    js :app, [
+    js :app, '/js/app.js', [
       '/js/vendor/required/**/*.js',
-      '/js/lib/**/*.js',
-      '/js/app.js'
+      '/js/lib/**/*.js'
     ]
 
     css :app, [
