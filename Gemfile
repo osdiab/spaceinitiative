@@ -1,11 +1,7 @@
 # encoding: UTF-8
 
 source 'https://rubygems.org'
-#ruby=rbx-2.2.3
-ruby '2.1.0', engine: 'rbx', engine_version: '2.2.3'
-platforms :rbx do
-  gem 'rubysl'
-end
+ruby '2.1.1'
 
 # core
 gem 'sinatra', '1.4.3'
@@ -14,13 +10,7 @@ gem 'rake'
 gem 'mongoid'
 gem 'foreman'
 
-# js runtime
-platforms :jruby do
-  gem 'therubyrhino'
-end
-platforms :ruby do
-  gem 'therubyracer'
-end
+gem 'therubyracer'
 
 # db
 gem 'sequel'
@@ -48,7 +38,6 @@ gem 'newrelic_rpm'
 gem 'tumblr_client'
 
 group :development, :test do
-  gem 'pre-commit'
   gem 'rspec' # unit testing
   gem 'rubocop' # linting
 end
