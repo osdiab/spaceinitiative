@@ -41,6 +41,7 @@ if $mac; then
     echo "Homebrew already installed. Great!"
   else
     echo "Homebrew not installed. Install it first, see http://brew.sh/ for details."
+    echo "To install it, run: ruby -e "\$\(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install\)""
     abort
   fi
 fi
@@ -92,26 +93,6 @@ else
   npm install -g jshint
   if [ $? -ne 0 ]; then
     echo "Installing jshint failed. Did node install properly?"
-    abort
-  fi
-fi
-
-exists gjslint result
-if $result; then
-  echo "gjslint already installed. Wow!"
-else
-  echo "Trying to install gjslint..."
-  exists easy_install result
-  if $result; then
-    sudo easy_install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz
-    if [ $? -ne 0 ]; then
-      echo "Installing gjslint failed. Follow the directions here to install:"
-      echo "https://developers.google.com/closure/utilities/docs/linter_howto"
-      abort
-    fi
-  else
-    echo "easy_install does not exist. Make sure python is installed!"
-    echo "Then, run this script again."
     abort
   fi
 fi
