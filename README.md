@@ -4,35 +4,42 @@ Stanford Student Space Initiative
 Website for Stanford Student Space Initiative. Copyright Stanford Student Space
 Initiative, Sept 17, 2013 under the MIT license.
 
+Unfortunately, Windows is not currently supported. Additionally, if you'd like
+to contribute, you probably need a decent command of using your Terminal, git,
+Ruby, and Javascript. If you're feeling it, then come onboard!
+
 # Setup
 
-## Installing Rubinius on your machine
+## Installing Ruby on your machine
 
-### Mac and Unix distros
-
-Choose your favorite way of installing Ruby 1.9.3. That could be using a
-Ruby version manager like [rvm](http://rvm.io/), or on Mac, using
-[homebrew](http://brew.sh/) to install `rbenv` and `ruby-build`, or just go to
-[Ruby's website](https://www.ruby-lang.org/en/downloads/) and install from
-source using their instructions.
-
-#### `rvm` instructions
+### Install `rvm`
 1. Download `rvm` with dotfiles patching by running this command:
 
    ```
    \curl -L https://get.rvm.io | bash -s stable --auto-dotfiles
    ```
-2. Install `rbx-2.2.1` using `rvm install rbx-2.2.1`. This may take a
-   while.
+2. Run `rvm install ruby-2.1.1`. This may take a while.
 3. Set it as your default ruby as so:
 
    ```
-   rvm use --default rbx-2.2.1
+   rvm use --default ruby-2.1.1
    ```
 
-### Windows
+   Alternatively, don't do this, and every time you enter the folder `rvm` should
+   recognize the correct version of Ruby from the Gemfile and switch to it.
 
-Rbx doesn't have Windows support yet. Sorry!
+#### Troubleshooting RVM
+
+You may get a notice that you're not using a login shell, and therefore RVM
+needs to be run as a function. To fix it, try adding this to ~/.bashrc (or
+whatever you use, if you use a different shell):
+
+```
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+```
+
+That runs RVM as a function. Restart your shell and hopefully it should work.
+If not, let me know and we'll see what to do.
 
 # Running the dev server
 
@@ -48,7 +55,7 @@ This project uses tools to automatically check basic code quality. They are as
 follows:
 
 Ruby: `rubocop`
-Javascript: `jshint` and `gjslint`
+Javascript: `jshint`
 
 These tools will help standardize the code base at least a little. To install,
 run the `install-linters` and `install-precommit` scripts in the `dev-scripts`
@@ -61,13 +68,8 @@ the credentials to add to your environment.
 
 # The stack
 
-This site runs on Rubinius on the Puma webserver.
-
-I chose Rubinius because it provides true multithreading and good performance,
-which means that it can in theory serve pages more efficiently than MRI (the
-reference Ruby interpreter) can using a multithreaded web server like Puma.
-Whether or not it makes an appreciable difference in a project like this is yet
-to be seen, but I thought it would be interesting to see how a different Ruby
-implementation would perform :)
+This site runs on Ruby on the Puma webserver. Puma is multithreaded, which is
+nice for performance, but otherwise it's transparent throughout the development
+process. Should be pretty easy to use :)
 
 # Happy developing!
