@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-gem install pre-commit
-cd ..
-pre-commit install
-git config "pre-commit.checks" "white_space, rspec_focus, merge_conflict, rubocop, jshint"
-cd dev-scripts
+(
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+    gem install pre-commit
+    cd "$DIR/.."
+    pre-commit install
+    git config "pre-commit.checks" "white_space, rspec_focus, merge_conflict, rubocop, jshint"
+)
