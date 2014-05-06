@@ -41,6 +41,7 @@ if $mac; then
     echo "Homebrew already installed. Great!"
   else
     echo "Homebrew not installed. Install it first, see http://brew.sh/ for details."
+    echo "To install it, run: ruby -e "\$\(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install\)""
     abort
   fi
 fi
