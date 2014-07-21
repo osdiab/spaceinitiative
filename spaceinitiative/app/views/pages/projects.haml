@@ -1,7 +1,7 @@
 .contentPane
   %h1#projectsPane.sectionHeading Projects
   .pane.secondaryContainer
-    - projects.each do |project|
+    - @projects.each do |project|
       - project_name = project.contact_name
       - project_name = project.email if project_name.nil?
       %h2= project.title
